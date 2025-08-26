@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents et Traces - Portfolio Thomas MAKSIMOUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="assets/styles.css" rel="stylesheet">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 5%;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .image-gallery {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .image-gallery:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-gray-800">Portfolio Compétences</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Accueil</a>
+                        <a href="competence4.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 4</a>
+                        <a href="competence5.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 5</a>
+                        <a href="competence6.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 6</a>
+                        <a href="conclusion.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conclusion</a>
+                        <a href="documents.html" class="nav-link text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Documents</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal pour les images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Section Documents -->
+    <section class="pt-20 pb-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-folder-open text-blue-600 mr-3"></i>
+                    Documents et Traces de Projet
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Retrouvez ici tous les documents, captures d'écran et traces de mes projets réalisés à l'école et en entreprise
+                </p>
+            </div>
+
+            <!-- Projet SAE -->
+            <div class="mb-16" data-aos="fade-up" id="projet-sae">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                    <i class="fas fa-graduation-cap text-green-600 mr-3"></i>
+                    Projet SAE - École
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Rapport d'organisation -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Rapport d'Organisation</h3>
+                            <p class="text-gray-600 mb-4">Document détaillant l'organisation et l'avancement du projet SAE</p>
+                            <a href="traces/Rapprt_de_notre_organisation_de_projet.pdf" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                                <i class="fas fa-file-pdf mr-2"></i>
+                                Voir le rapport
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Base de données MongoDB -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Base de Données MongoDB</h3>
+                            <p class="text-gray-600 mb-4">Capture de la base de données de l'application SAE505</p>
+                            <img src="traces/Pasted Graphic 2.png" alt="Base de données MongoDB" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Page d'accueil application -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Application Déployée</h3>
+                            <p class="text-gray-600 mb-4">Page d'accueil de l'application EcoTracker</p>
+                            <img src="traces/Pasted Graphic 4.png" alt="Page d'accueil" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Carte des espaces -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Carte Interactive</h3>
+                            <p class="text-gray-600 mb-4">Carte avec les différents espaces disponibles</p>
+                            <img src="traces/Pasted Graphic 3.png" alt="Carte des espaces" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Structure du code -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Structure du Code</h3>
+                            <p class="text-gray-600 mb-4">Organisation du code de l'application</p>
+                            <img src="traces/Pasted Graphic 5.png" alt="Structure du code" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Logs de déploiement -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Logs de Déploiement</h3>
+                            <p class="text-gray-600 mb-4">Suivi du déploiement de l'application</p>
+                            <img src="traces/Pasted Graphic.jpg" alt="Logs de déploiement" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Notion -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Gestion Notion</h3>
+                            <p class="text-gray-600 mb-4">Suivi des tâches et cahier des charges</p>
+                            <img src="traces/Pasted Graphic 1.png" alt="Gestion Notion" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternance WAAT -->
+            <div class="mb-16" data-aos="fade-up" id="alternance-waat">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                    <i class="fas fa-briefcase text-purple-600 mr-3"></i>
+                    Alternance WAAT - Data Analyst
+                </h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Équipe Teams -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Équipe Teams</h3>
+                            <p class="text-gray-600 mb-4">Communication et collaboration avec l'équipe</p>
+                            <img src="traces/groupe_teams.jpg" alt="Équipe Teams" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Calendrier partagé -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Calendrier Partagé</h3>
+                            <p class="text-gray-600 mb-4">Planification des réunions hebdomadaires</p>
+                            <img src="traces/Pasted Graphic 8.jpg" alt="Calendrier partagé" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Planificateur -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Planificateur</h3>
+                            <p class="text-gray-600 mb-4">Organisation des différentes tâches</p>
+                            <img src="traces/Pasted Graphic 6 copy.jpg" alt="Planificateur" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Schéma ETL -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Schéma ETL</h3>
+                            <p class="text-gray-600 mb-4">Méthodologie pour la construction des dashboards</p>
+                            <img src="traces/Source 2.png" alt="Schéma ETL" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Performance -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dashboard Performance</h3>
+                            <p class="text-gray-600 mb-4">Suivi de la performance des bornes</p>
+                            <img src="traces/Suivi de la performance des bornes.png" alt="Dashboard Performance" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Overview -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dashboard Overview</h3>
+                            <p class="text-gray-600 mb-4">Vue d'ensemble d'un Binder</p>
+                            <img src="traces/inconnu.png" alt="Dashboard Overview" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Focus -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dashboard Focus</h3>
+                            <p class="text-gray-600 mb-4">Dashboard Focus d'un Binder</p>
+                            <img src="traces/inconnu copy.png" alt="Dashboard Focus" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Map des points de charge -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Map des Points de Charge</h3>
+                            <p class="text-gray-600 mb-4">Carte des bornes d'un Binder</p>
+                            <img src="traces/Map des points de charge.png" alt="Map des points de charge" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Dashboard données brutes -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Données Brutes</h3>
+                            <p class="text-gray-600 mb-4">Dashboard des données téléchargeables</p>
+                            <img src="traces/inconnu copy 2.png" alt="Dashboard données brutes" class="w-full h-48 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Flows -->
+            <div class="mb-16" data-aos="fade-up" id="data-flows">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                    <i class="fas fa-project-diagram text-orange-600 mr-3"></i>
+                    Migration Data Flows
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Avant migration -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Avant Migration (Monta)</h3>
+                            <p class="text-gray-600 mb-4">Un seul data flow volumineux et lent</p>
+                            <img src="traces/Pasted Graphic 9.jpg" alt="Avant migration" class="w-full h-64 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Après migration -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Après Migration (Snowflake)</h3>
+                            <p class="text-gray-600 mb-4">Séparation en deux data flows optimisés</p>
+                            <img src="traces/Pasted Graphic 10.jpg" alt="Après migration" class="w-full h-64 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Data flow sécurité -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Data Flow Sécurité</h3>
+                            <p class="text-gray-600 mb-4">Premier data flow séparé</p>
+                            <img src="traces/Pasted Graphic 11.jpg" alt="Data flow sécurité" class="w-full h-64 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Dataflow All Operators -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Dataflow All Operators</h3>
+                            <p class="text-gray-600 mb-4">Dataflow unifié pour tous les opérateurs</p>
+                            <img src="traces/Pasted Graphic 9.jpg" alt="Dataflow All Operators" class="w-full h-64 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Migration Snowflake -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Migration Snowflake</h3>
+                            <p class="text-gray-600 mb-4">Migration vers Snowflake</p>
+                            <img src="traces/Pasted Graphic 12.jpg" alt="Migration Snowflake" class="w-full h-64 object-cover image-gallery" onclick="openModal(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Portfolio Compétences Informatiques. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal pour les images
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var span = document.getElementsByClassName("close")[0];
+
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Animation AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Défilement fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

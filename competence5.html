@@ -25,6 +25,7 @@
                         <a href="competence5.html" class="nav-link text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 5</a>
                         <a href="competence6.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 6</a>
                         <a href="conclusion.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conclusion</a>
+                        <a href="documents.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Documents</a>
                     </div>
                 </div>
             </div>
@@ -187,15 +188,21 @@
                         <h4 class="text-lg font-semibold text-gray-800 mb-4">Outils de Gestion</h4>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-chart-gantt text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Diagramme de Gantt</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/Pasted Graphic 1.png" alt="Gestion Notion" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Gestion Notion</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-users text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Organisation d'équipe</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/groupe_teams.jpg" alt="Équipe Teams" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Équipe Teams</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="documents.html#projet-sae" class="inline-flex items-center text-green-600 hover:text-green-800 text-sm">
+                                <i class="fas fa-external-link-alt mr-1"></i>
+                                Voir tous les documents de gestion de projet
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -294,23 +301,29 @@
                 <!-- Zone Photos Projets WAAT -->
                 <div class="mt-8 bg-white rounded-lg p-6">
                     <h4 class="text-lg font-semibold text-gray-800 mb-4">Preuves de Projets</h4>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="bg-gray-100 rounded-lg p-4 text-center">
-                            <i class="fas fa-chart-gantt text-3xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-600 text-sm">Planning Microsoft</p>
-                            <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                            <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                <img src="traces/Pasted Graphic 6 copy.jpg" alt="Planning Microsoft" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Planning Microsoft</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                <img src="traces/Pasted Graphic 9.jpg" alt="Dataflow All Operators" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Dataflow All Operators</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                <img src="traces/Pasted Graphic 12.jpg" alt="Migration Snowflake" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Migration Snowflake</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-100 rounded-lg p-4 text-center">
-                            <i class="fas fa-database text-3xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-600 text-sm">Dataflow All Operators</p>
-                            <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                        <div class="mt-4 text-center">
+                            <a href="documents.html#data-flows" class="inline-flex items-center text-green-600 hover:text-green-800 text-sm">
+                                <i class="fas fa-external-link-alt mr-1"></i>
+                                Voir tous les documents de migration data flows
+                            </a>
                         </div>
-                        <div class="bg-gray-100 rounded-lg p-4 text-center">
-                            <i class="fas fa-cloud text-3xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-600 text-sm">Migration Snowflake</p>
-                            <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -367,6 +380,33 @@
         </div>
     </footer>
 
+    <!-- Modal pour les images -->
+    <div id="imageModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
+        <span class="close" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        <img class="modal-content" id="modalImage" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 5%;">
+    </div>
+
+    <script>
+        // Modal pour les images
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var span = document.getElementsByClassName("close")[0];
+
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     <script src="assets/script.js"></script>
 </body>
 </html>

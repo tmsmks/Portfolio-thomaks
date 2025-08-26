@@ -30,6 +30,7 @@
                         <a href="competence5.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 5</a>
                         <a href="competence6.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 6</a>
                         <a href="conclusion.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conclusion</a>
+                        <a href="documents.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Documents</a>
                     </div>
                 </div>
             </div>
@@ -194,15 +195,21 @@
                         <h4 class="text-lg font-semibold text-gray-800 mb-4">Captures d'Écran du Projet</h4>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-database text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Schéma de base de données</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/Pasted Graphic 2.png" alt="Base de données MongoDB" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Base de données MongoDB</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-code text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Application web</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/Pasted Graphic 4.png" alt="Application web" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Application EcoTracker</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="documents.html#projet-sae" class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+                                <i class="fas fa-external-link-alt mr-1"></i>
+                                Voir tous les documents du projet SAE
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -243,15 +250,21 @@
                         <h4 class="text-lg font-semibold text-gray-800 mb-4">Preuves de Travail</h4>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-chart-bar text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Dashboard ClicData</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/Suivi de la performance des bornes.png" alt="Dashboard Performance" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Dashboard Performance</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
-                                <i class="fas fa-file-excel text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 text-sm">Contrôles Excel</p>
-                                <p class="text-xs text-gray-500 mt-1">[Photo à ajouter]</p>
+                                <img src="traces/inconnu.png" alt="Dashboard Overview" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Dashboard Overview</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
                             </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="documents.html#alternance-waat" class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+                                <i class="fas fa-external-link-alt mr-1"></i>
+                                Voir tous les documents de l'alternance WAAT
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -302,6 +315,33 @@
         </div>
     </footer>
 
+    <!-- Modal pour les images -->
+    <div id="imageModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
+        <span class="close" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        <img class="modal-content" id="modalImage" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 5%;">
+    </div>
+
+    <script>
+        // Modal pour les images
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var span = document.getElementsByClassName("close")[0];
+
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     <script src="assets/script.js"></script>
 </body>
 </html>
