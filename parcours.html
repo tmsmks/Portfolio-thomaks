@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Parcours - Thomas MAKSIMOUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="assets/styles.css" rel="stylesheet">
+    <style>
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #3B82F6 0%, #8B5CF6 100%);
+            transform: translateX(-50%);
+        }
+        .timeline-content {
+            position: relative;
+            margin-left: 2rem;
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1rem;
+            width: 1rem;
+            height: 1rem;
+            background: #3B82F6;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3B82F6;
+        }
+        @media (min-width: 768px) {
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 0;
+                margin-right: 2rem;
+                text-align: right;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::before {
+                left: auto;
+                right: -2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-gray-800">Portfolio Compétences</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Accueil</a>
+                        <a href="parcours.html" class="nav-link text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Parcours</a>
+                        <a href="competence4.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 4</a>
+                        <a href="competence5.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 5</a>
+                        <a href="competence6.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 6</a>
+                        <a href="conclusion.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conclusion</a>
+                        <a href="documents.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Documents</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Parcours -->
+    <section class="pt-20 pb-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-road text-blue-600 mr-3"></i>
+                    Mon Parcours
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez mon parcours académique et professionnel, de mes études à mes expériences en entreprise
+                </p>
+            </div>
+
+            <!-- Timeline du parcours -->
+            <div class="relative" data-aos="fade-up">
+                <div class="space-y-12">
+                    <!-- 2020-2022 : Baccalauréat -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-blue-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Baccalauréat Général</h3>
+                                        <p class="text-blue-600 font-semibold">2020 - 2022</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <p class="text-gray-700">
+                                        <strong>Spécialités :</strong> Mathématiques et Physique-Chimie
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Mention :</strong> Bien
+                                    </p>
+                                    <p class="text-gray-700">
+                                        Cette formation m'a donné une solide base scientifique et analytique, 
+                                        essentielle pour ma future orientation vers l'informatique et la data science.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022-2025 : BUT Informatique -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-8 border-l-4 border-green-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-laptop-code text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">BUT Informatique</h3>
+                                        <p class="text-green-600 font-semibold">2022 - 2025</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <p class="text-gray-700">
+                                        <strong>Établissement :</strong> IUT de Paris-Est Créteil Vitry (UPEC)
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Parcours :</strong> Administration, gestion et exploitation des données
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Promotion :</strong> 2022-2025
+                                    </p>
+                                    <p class="text-gray-700">
+                                        Formation complète en informatique avec une spécialisation en gestion de données, 
+                                        couvrant les bases de données, le développement web, et l'analyse de données.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2023-2024 : Alternance CFE -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-8 border-l-4 border-purple-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-database text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Référent Technique Base de Données CRM</h3>
+                                        <p class="text-purple-600 font-semibold">2023 - 2024 | CFE</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <p class="text-gray-700">
+                                        <strong>Poste :</strong> Référent technique base de données CRM
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Technologies :</strong> Salesforce
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Responsabilités :</strong> Responsable technique du CRM
+                                    </p>
+                                    <p class="text-gray-700">
+                                        Cette première expérience en alternance m'a permis d'acquérir une grande expertise 
+                                        sur Salesforce et de développer mes compétences en gestion de base de données CRM. 
+                                        J'étais le responsable technique du CRM, gérant les configurations, les optimisations 
+                                        et le support technique.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2024-2025 : Alternance WAAT -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-8 border-l-4 border-orange-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-chart-line text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Data Analyst</h3>
+                                        <p class="text-orange-600 font-semibold">2024 - 2025 | WAAT</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <p class="text-gray-700">
+                                        <strong>Poste :</strong> Data Analyst
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Technologies :</strong> ClicData, Data Warehouse Monta et Snowflake
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Missions principales :</strong>
+                                    </p>
+                                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+                                        <li>Manipulation et valorisation des données</li>
+                                        <li>Création de dashboards et rapports</li>
+                                        <li>Migration de data flows de Monta vers Snowflake</li>
+                                        <li>Optimisation des processus ETL</li>
+                                        <li>Formation et tutorat de stagiaires</li>
+                                    </ul>
+                                    <p class="text-gray-700">
+                                        Cette expérience m'a permis de maîtriser les outils de Business Intelligence 
+                                        et de participer à des projets de migration d'infrastructure data.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025-2027 : Master HES-SO -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-8 border-l-4 border-red-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-globe text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Master en Ingénierie - Data Science</h3>
+                                        <p class="text-red-600 font-semibold">2025 - 2027 | HES-SO Lausanne</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <p class="text-gray-700">
+                                        <strong>Établissement :</strong> HES-SO (Haute École Spécialisée de Suisse Occidentale)
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Localisation :</strong> Lausanne, Suisse
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Spécialité :</strong> Data Science
+                                    </p>
+                                    <p class="text-gray-700">
+                                        <strong>Statut :</strong> Admission obtenue ✅
+                                    </p>
+                                    <p class="text-gray-700">
+                                        Cette formation internationale me permettra d'approfondir mes compétences en data science 
+                                        et d'acquérir une expertise de niveau master dans un environnement international.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compétences acquises -->
+            <div class="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-6 text-center">
+                    <i class="fas fa-star mr-3"></i>
+                    Compétences Acquises
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white/10 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3">Gestion de Données</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Administration de bases de données</li>
+                            <li>• Migration de data warehouses</li>
+                            <li>• Optimisation de requêtes SQL</li>
+                            <li>• Gestion de CRM (Salesforce)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3">Business Intelligence</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Création de dashboards</li>
+                            <li>• Processus ETL</li>
+                            <li>• Outils ClicData</li>
+                            <li>• Analyse de données</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3">Leadership & Formation</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Tutorat de stagiaires</li>
+                            <li>• Gestion d'équipe</li>
+                            <li>• Communication technique</li>
+                            <li>• Responsabilité technique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-16 text-center">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
+                        <i class="fas fa-home mr-2"></i>
+                        Accueil
+                    </a>
+                    <a href="competence4.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
+                        <i class="fas fa-database mr-2"></i>
+                        Compétence 4
+                    </a>
+                    <a href="conclusion.html" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
+                        <i class="fas fa-flag-checkered mr-2"></i>
+                        Conclusion
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-lg font-semibold mb-2">Thomas MAKSIMOUS</p>
+                    <p class="text-gray-300">Data Analyst & Étudiant en BUT Informatique</p>
+                    <p class="text-sm text-gray-400 mt-2">&copy; Thomas MAKSIMOUS. Tous droits réservés.</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <div class="flex flex-wrap justify-center md:justify-end gap-4">
+                        <a href="CV_Thomas_MKS.pdf" target="_blank" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <i class="fas fa-file-pdf mr-2"></i>
+                            <span class="text-sm">CV</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/thomas-maksimous-635048191/" target="_blank" class="flex items-center text-gray-300 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            <span class="text-sm">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/tmsmks" target="_blank" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            <span class="text-sm">GitHub</span>
+                        </a>
+                        <a href="mailto:maksimous.t@gmail.com" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span class="text-sm">Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
