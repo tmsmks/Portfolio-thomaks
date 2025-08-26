@@ -342,10 +342,28 @@
                             <p class="text-sm text-gray-700 mb-2"><strong>AC 2 :</strong> Préparation et extraction des données pour l'exploitation</p>
                             <p class="text-sm text-gray-700"><strong>AC 4 :</strong> Mise en production de l'application sur Render</p>
                         </div>
+
+                        <h5 class="font-semibold text-gray-700 mb-3 mt-4">Difficultés rencontrées et solutions :</h5>
+                        <div class="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-400">
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">🔄 Gestion des APIs hétérogènes :</p>
+                                    <p class="text-sm text-gray-600">Les différentes APIs (INPN, Velib', OpenWeatherMap) avaient des formats et des limites de requêtes différents. <strong>Solution :</strong> Mise en place d'un système de cache et de gestion d'erreurs robuste.</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">🗄️ Optimisation MongoDB :</p>
+                                    <p class="text-sm text-gray-600">Les requêtes géospatiales étaient lentes avec de gros volumes de données. <strong>Solution :</strong> Création d'index géospatial et optimisation des requêtes.</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">🚀 Déploiement Render :</p>
+                                    <p class="text-sm text-gray-600">Problèmes de configuration et de connexion à la base de données MongoDB Atlas. <strong>Solution :</strong> Configuration des variables d'environnement et whitelist des IPs.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="bg-white rounded-lg p-6">
                         <h4 class="text-lg font-semibold text-gray-800 mb-4">Captures d'Écran du Projet</h4>
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-3 gap-4">
                             <div class="bg-gray-100 rounded-lg p-4 text-center">
                                 <img src="traces/Pasted Graphic 2.png" alt="Base de données MongoDB" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
                                 <p class="text-gray-600 text-sm">Base de données MongoDB</p>
@@ -366,6 +384,15 @@
                                 <div class="mt-2 text-xs text-gray-600">
                                     <p><strong>Preuve AC 4 :</strong> Mise en production de système</p>
                                     <p><strong>Preuve UE6.4 :</strong> Conception de système d'information</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                <img src="traces/image.png" alt="Architecture système" class="w-full h-32 object-cover rounded mb-2 cursor-pointer" onclick="openModal(this.src)">
+                                <p class="text-gray-600 text-sm">Architecture Système</p>
+                                <p class="text-xs text-gray-500 mt-1">Cliquez pour agrandir</p>
+                                <div class="mt-2 text-xs text-gray-600">
+                                    <p><strong>Preuve AC 2 :</strong> Préparation et extraction des données</p>
+                                    <p><strong>Preuve UE5.4 :</strong> Administration de systèmes décisionnels</p>
                                 </div>
                             </div>
                         </div>
@@ -420,6 +447,24 @@
                             <p class="text-sm text-gray-700 mb-2"><strong>AC 2 :</strong> Processus ETL et préparation des données pour dashboards</p>
                             <p class="text-sm text-gray-700 mb-2"><strong>AC 3 :</strong> Analyse de performance et fouille de données</p>
                             <p class="text-sm text-gray-700"><strong>AC 4 :</strong> Optimisation et migration vers Snowflake</p>
+                        </div>
+
+                        <h5 class="font-semibold text-gray-700 mb-3 mt-4">Difficultés rencontrées et solutions :</h5>
+                        <div class="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-400">
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">📊 Volume de données :</p>
+                                    <p class="text-sm text-gray-600">Gestion de millions de données de performance des bornes. <strong>Solution :</strong> Optimisation des requêtes et mise en place de processus ETL efficaces.</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">🔄 Migration Snowflake :</p>
+                                    <p class="text-sm text-gray-600">Transition complexe de Monta vers Snowflake sans interruption de service. <strong>Solution :</strong> Migration progressive et tests approfondis.</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-700">🎯 Besoins clients :</p>
+                                    <p class="text-sm text-gray-600">Traduction des besoins métier en solutions techniques adaptées. <strong>Solution :</strong> Communication étroite avec les équipes et itérations rapides.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="bg-white rounded-lg p-6">
