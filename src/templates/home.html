@@ -107,6 +107,7 @@
     {% for p in projects %}
     <article class="card mood-{{ p.theme.mood }}" data-sig="{{ p.theme.sig }}" style="--pbg:{{ p.theme.bg }};--pbg2:{{ p.theme.bg2 }};--pink:{{ p.theme.ink }};--pac:{{ p.theme.accent }};--pac2:{{ p.theme.accent2 }};--pfont:{{ p.theme.display }};--pmuted:{{ p.theme.muted }};--i:{{ loop.index0 }}">
       <a class="card__link" href="{{ p.href }}" data-cursor="view" aria-label="{{ site.ui.open }} — {{ p.title }}">
+        <span class="card__dim" aria-hidden="true"></span>
         <div class="card__visual"><canvas class="card__sig"></canvas></div>
         <div class="card__body">
           <p class="card__meta"><span class="card__idx">{{ '%02d' % loop.index }}</span><span class="card__period">{{ p.period }}</span></p>
