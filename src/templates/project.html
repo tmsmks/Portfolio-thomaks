@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title }} — {{ site.name }}{% endblock %}
+{% block description %}{{ p.short }}{% endblock %}
+{% block themecolor %}{{ theme.bg }}{% endblock %}
+{% block bodyclass %}project mood-{{ theme.mood }}{% endblock %}
+{% block head %}
+<style>
+:root{
+  --bg:{{ theme.bg }};--bg2:{{ theme.bg2 }};--ink:{{ theme.ink }};--muted:{{ theme.muted }};
+  --accent:{{ theme.accent }};--accent2:{{ theme.accent2 }};--line:{{ theme.line }};
+  --display:{{ theme.display|safe }};--body:{{ theme.body|safe }};
+}
+</style>
+{% endblock %}
+{% block nav %}
+<header class="pnav">
+  <a class="pnav__back magnetic" href="{{ home_href }}" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>{{ site.name }}</span></a>
+  <span class="pnav__count"><b>{{ '%02d' % index }}</b> / {{ '%02d' % total }}</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="{{ home_href }}#projets" data-cursor="link">{{ site.ui.all_projects }}</a>
+    <a class="nav__lang" href="{{ alt_href }}" title="{{ site.lang_switch.title }}">{{ site.lang_switch.label }}</a>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="{{ theme.sig }}" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>{{ p.period }}</span><span>{{ p.context }}</span></p>
+    <h1 class="phero__title" id="pTitle">{{ p.title }}</h1>
+    <p class="phero__sub">{{ p.subtitle }}</p>
+    <p class="phero__tags">{% for s in theme.tags %}<i>{{ s }}</i>{% endfor %}</p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="{{ site.ui.scroll }}"><span>{{ site.ui.scroll }}</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+    {% for para in p.intro %}<p class="pintro__p reveal{% if loop.first %} pintro__p--lead{% endif %}">{{ para }}</p>{% endfor %}
+  </div>
+  <aside class="pside reveal">
+    <h2>{{ site.ui.role }}</h2>
+    <p>{{ p.role }}</p>
+    <h2>{{ site.ui.stack }}</h2>
+    <ul class="pside__stack">{% for s in p.stack %}<li style="--ci:{{ loop.index0 }}">{{ s }}</li>{% endfor %}</ul>
+    <h2>{{ site.ui.links }}</h2>
+    <ul class="pside__links">
+      {% for l in p.links %}
+      <li><a href="{{ l.url }}" target="_blank" rel="noopener" data-cursor="link">{{ l.label }} ↗</a>{% if l.private %}<span class="pside__private">{{ site.private_badge }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </aside>
+</section>
+
+{% if p.gallery %}
+<section class="pgallery">
+  <div class="pgallery__track" id="gallery">
+    {% for g in p.gallery %}
+    <figure class="pgallery__item reveal">
+      <img src="{{ root }}assets/img/{{ g.src }}" alt="{{ g.alt }}" loading="lazy" width="{{ g.w }}" height="{{ g.h }}">
+      <figcaption>{{ g.alt }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="psections">
+  {% for s in p.sections %}
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">{{ s.h }}</h2>
+      <p>{{ s.p }}</p>
+      {% if s.list %}<ul>{% for li in s.list %}<li>{{ li }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">{{ site.ui.results }}</h2>
+  <ul class="presults__grid">
+    {% for v, l in p.results %}<li class="reveal"><strong data-count="{{ v }}">{{ v }}</strong><span>{{ l }}</span></li>{% endfor %}
+  </ul>
+</section>
+
+<nav class="pfoot" aria-label="{{ site.ui.all_projects }}">
+  <a class="pfoot__prev" href="{{ prev_p.slug }}.html" data-cursor="link" style="--nbg:{{ prev_p.theme.bg }};--nac:{{ prev_p.theme.accent }};--nfont:{{ prev_p.theme.display }}"><small>← {{ site.ui.prev_project }}</small><span>{{ prev_p.title }}</span></a>
+  <a class="pfoot__next" href="{{ next_p.slug }}.html" data-cursor="link" style="--nbg:{{ next_p.theme.bg }};--nac:{{ next_p.theme.accent }};--nfont:{{ next_p.theme.display }}"><small>{{ site.ui.next_project }} →</small><span>{{ next_p.title }}</span></a>
+</nav>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ root }}assets/js/sig/all.js" defer></script>
+<script src="{{ root }}assets/js/project.js" defer></script>
+{% endblock %}

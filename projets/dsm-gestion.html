@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSM Gestion — Thomas Maksimous</title>
+<meta name="description" content="Logiciel de devis et factures pour une entreprise du bâtiment, avec un assistant IA à qui l&#39;on parle, écrit ou envoie une photo. Rien ne part sans validation humaine.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#0B1F4D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DSM Gestion — Thomas Maksimous">
+<meta property="og:description" content="Logiciel de devis et factures pour une entreprise du bâtiment, avec un assistant IA à qui l&#39;on parle, écrit ou envoie une photo. Rien ne part sans validation humaine.">
+<meta property="og:image" content="../assets/img/thomas.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="en" href="../en/projects/dsm-gestion.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+:root{
+  --bg:#0B1F4D;--bg2:#122C66;--ink:#F6F8FC;--muted:#A9BBE0;
+  --accent:#F28C28;--accent2:#FFFFFF;--line:rgba(246,248,252,.18);
+  --display:'Barlow Condensed', sans-serif;--body:'Barlow', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-blueprint">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>04</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../index.html#projets" data-cursor="link">Tous les projets</a>
+    <a class="nav__lang" href="../en/projects/dsm-gestion.html" title="Read in English">EN</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="invoice" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>2026</span><span>Conçu pour D.S.M. Bâtiment, l&#39;entreprise de mon père. Pensé pour être généralisable à toute petite entreprise.</span></p>
+    <h1 class="phero__title" id="pTitle">DSM Gestion</h1>
+    <p class="phero__sub">Dictez le devis, l&#39;IA le met en page, le gérant valide</p>
+    <p class="phero__tags"><i>Next.js</i><i>PostgreSQL</i><i>Claude</i><i>Ollama</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Défiler"><span>Défiler</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Un chef d&#39;entreprise du bâtiment passe ses soirées à retaper des devis. Il sait exactement ce qu&#39;il veut facturer — il le dit à voix haute dans sa camionnette — mais entre la dictée et le PDF, il y a Word, une calculette et une heure perdue.</p><p class="pintro__p reveal">DSM Gestion écoute. On dicte, on écrit, on envoie une capture d&#39;e-mail ou la photo d&#39;un devis griffonné : l&#39;assistant prépare le document dans la mise en page habituelle de l&#39;entreprise. Puis le gérant relit, corrige et valide. Jamais l&#39;inverse.</p>  </div>
+  <aside class="pside reveal">
+    <h2>Mon rôle</h2>
+    <p>Produit, architecture, développement complet, règles métier et conformité facturation.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Next.js 16</li><li style="--ci:1">TypeScript</li><li style="--ci:2">Drizzle ORM</li><li style="--ci:3">PostgreSQL / PGlite / Supabase</li><li style="--ci:4">Anthropic SDK · Zod</li><li style="--ci:5">Ollama</li><li style="--ci:6">@react-pdf/renderer</li><li style="--ci:7">nodemailer</li><li style="--ci:8">iron-session</li><li style="--ci:9">Vitest</li></ul>
+    <h2>Liens</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/dsm-gestion" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/dsm-gestion ↗</a><span class="pside__private">Dépôt privé — code sur demande</span></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Une IA qui propose, un humain qui décide</h2>
+      <p>L&#39;assistant tourne en local avec Ollama (gratuit, aucune donnée ne sort de l&#39;ordinateur) ou avec Claude via l&#39;API Anthropic, sortie structurée validée par un schéma Zod. Il n&#39;invente jamais un prix : un lot sans montant est signalé, avec au besoin une suggestion tirée de l&#39;historique. Il liste les points à vérifier et montre les changements « avant → après ». Les totaux sont calculés par le code, jamais par le modèle.</p>
+<ul><li>Entrées : texte, dictée vocale, captures d&#39;écran, photos, PDF</li><li>Fournisseur IA interchangeable : Ollama local ou Claude</li><li>Proposition → relecture → application, tracées dans un journal</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">La conformité comme une base de données</h2>
+      <p>Numérotation continue au format de l&#39;entreprise, attribuée dans une transaction. Une facture émise est figée : l&#39;application et des triggers PostgreSQL refusent toute modification ; on corrige par un avoir. Chaque PDF est conservé avec son empreinte SHA-256. Les mentions obligatoires — décennale, TVA réduite, déchets (loi AGEC), rétractation, médiateur, pénalités — sont ajoutées automatiquement selon le client.</p>
+<ul><li>Montants en centimes, totaux calculés côté serveur</li><li>Verrouillage par triggers SQL</li><li>Journal complet : qui, quoi, quand, à la main ou par l&#39;IA</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Du devis à l&#39;encaissement, au même endroit</h2>
+      <p>Devis → facture en un clic avec acomptes déduits, paiements reçus et passage automatique en « payée », avoirs, tableau de bord (à valider, en attente, reste à encaisser), envoi par Gmail avec le PDF après confirmation. Installable comme une application sur ordinateur et téléphone, avec un compte par personne : gérant, secrétariat, aide.</p>
+<ul><li>PDF vectoriels calqués sur les factures d&#39;origine (@react-pdf/renderer)</li><li>PWA, mode local avec PostgreSQL embarqué</li><li>Tests Vitest sur une base réinitialisée</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">Ce que ça a donné</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="0">0</strong><span>prix inventé par l&#39;IA, par construction</span></li><li class="reveal"><strong data-count="100 %">100 %</strong><span>des documents validés par un humain</span></li><li class="reveal"><strong data-count="1">1</strong><span>endroit pour devis, factures, avoirs, paiements et envois</span></li><li class="reveal"><strong data-count="2">2</strong><span>modes d&#39;IA : local gratuit ou cloud</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="Tous les projets">
+  <a class="pfoot__prev" href="pi-26.html" data-cursor="link" style="--nbg:#070B12;--nac:#FFC53D;--nfont:&#39;Archivo&#39;, sans-serif"><small>← Projet précédent</small><span>Coupures d&#39;électricité à l&#39;hôpital</span></a>
+  <a class="pfoot__next" href="triply.html" data-cursor="link" style="--nbg:#07262B;--nac:#F26B5B;--nfont:&#39;DM Serif Display&#39;, Georgia, serif"><small>Projet suivant →</small><span>Triply</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Site conçu et codé par Thomas, construit avec un peu d&#39;IA et beaucoup d&#39;animations.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · Tous droits réservés.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/sig/all.js" defer></script>
+<script src="../assets/js/project.js" defer></script>
+</body>
+</html>

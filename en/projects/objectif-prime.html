@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objectif Prime — Thomas Maksimous</title>
+<meta name="description" content="Web and mobile weight-loss tracker with private groups and a leaderboard between friends. Next.js, Supabase, Open Food Facts.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#0B1F17">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Objectif Prime — Thomas Maksimous">
+<meta property="og:description" content="Web and mobile weight-loss tracker with private groups and a leaderboard between friends. Next.js, Supabase, Open Food Facts.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/objectif-prime.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#0B1F17;--bg2:#122C21;--ink:#EEF8F1;--muted:#8FB09F;
+  --accent:#3DDC84;--accent2:#FF8A3D;--line:rgba(238,248,241,.14);
+  --display:'Outfit', sans-serif;--body:'Outfit', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-fresh">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>06</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/objectif-prime.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="curve" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>Spring 2026</span><span>Personal project.</span></p>
+    <h1 class="phero__title" id="pTitle">Objectif Prime</h1>
+    <p class="phero__sub">Lose weight, but with friends</p>
+    <p class="phero__tags"><i>Next.js</i><i>Supabase</i><i>Tailwind</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Existing tracking apps do everything, except the one thing we wanted among friends: compare ourselves with each other, simply, without sharing our data with the whole world.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Design, web development, Supabase schema, iOS version with Capacitor.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Next.js 16</li><li style="--ci:1">TypeScript</li><li style="--ci:2">Tailwind CSS 4</li><li style="--ci:3">Supabase</li><li style="--ci:4">Open Food Facts API</li><li style="--ci:5">Recharts</li><li style="--ci:6">Capacitor</li><li style="--ci:7">Vercel</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/objectif-prime-web" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/objectif-prime-web ↗</a></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">The day on one page</h2>
+      <p>Onboarding (height, weight, age, goal, target date), daily dashboard: weight, calories in and out, balance, steps. Weight curve, food journal connected to Open Food Facts (search and barcode), sports activities with MET-based calorie estimates.</p>
+<ul><li>Next.js 16 App Router, Server Actions</li><li>Tailwind CSS 4</li><li>Recharts charts</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">The group</h2>
+      <p>Private groups joined with an invitation code, leaderboard on percentage lost rather than kilos — so it&#39;s fair between different builds. Row-level security policies in Supabase: you only see the groups you belong to.</p>
+<ul><li>Supabase Auth + Postgres + RLS</li><li>Vercel deployment</li><li>iOS version wrapped with Capacitor</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="3">3</strong><span>data sources: manual entry, Open Food Facts, Health app</span></li><li class="reveal"><strong data-count="2">2</strong><span>platforms: web and iOS</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="triply.html" data-cursor="link" style="--nbg:#07262B;--nac:#F26B5B;--nfont:&#39;DM Serif Display&#39;, Georgia, serif"><small>← Previous project</small><span>Triply</span></a>
+  <a class="pfoot__next" href="ecotracker.html" data-cursor="link" style="--nbg:#121F14;--nac:#A5D250;--nfont:&#39;Fraunces&#39;, Georgia, serif"><small>Next project →</small><span>EcoTracker</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

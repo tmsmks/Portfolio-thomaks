@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% block bodyclass %}home{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{% for p in projects %}family={{ p.theme.preview_font }}{% if not loop.last %}&{% endif %}{% endfor %}&display=swap">
+{% endblock %}
+{% block preloader %}
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <p class="loader__name"><span>T</span><span>h</span><span>o</span><span>m</span><span>a</span><span>s</span><span class="loader__sp"> </span><span>M</span><span>a</span><span>k</span><span>s</span><span>i</span><span>m</span><span>o</span><span>u</span><span>s</span></p>
+    <p class="loader__count"><span id="loaderCount">00</span></p>
+    <p class="loader__bar"><span id="loaderBar"></span></p>
+  </div>
+</div>
+{% endblock %}
+{% block nav %}
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="{{ site.name }}"><span class="nav__mono">TM</span><span class="nav__name">{{ site.name }}</span></a>
+  <nav class="nav__links" aria-label="{{ site.ui.menu }}">
+    <a href="#projets" data-cursor="link">{{ site.nav.projects }}</a>
+    <a href="#parcours" data-cursor="link">{{ site.nav.path }}</a>
+    <a href="#competences" data-cursor="link">{{ site.nav.skills }}</a>
+    <a href="#moi" data-cursor="link">{{ site.nav.about }}</a>
+    <a href="#contact" data-cursor="link">{{ site.nav.contact }}</a>
+  </nav>
+  <div class="nav__tools">
+    <a class="nav__lang" href="{{ alt_href }}" title="{{ site.lang_switch.title }}" hreflang="{{ 'en' if lang == 'fr' else 'fr' }}">{{ site.lang_switch.label }}</a>
+    <a class="btn btn--ghost btn--sm nav__cv" href="{{ root }}assets/{{ site.cv }}" target="_blank">CV</a>
+  </div>
+  <button class="nav__burger" aria-label="{{ site.ui.menu }}" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#projets">{{ site.nav.projects }}</a>
+  <a href="#parcours">{{ site.nav.path }}</a>
+  <a href="#competences">{{ site.nav.skills }}</a>
+  <a href="#moi">{{ site.nav.about }}</a>
+  <a href="#contact">{{ site.nav.contact }}</a>
+  <a href="{{ alt_href }}" class="mnav__lang">{{ site.lang_switch.label }}</a>
+</div>
+{% endblock %}
+
+{% block main %}
+<section class="hero">
+  <canvas class="hero__breath" id="breath" aria-hidden="true"></canvas>
+  <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+  <div class="hero__grid">
+    <div class="hero__text">
+      <p class="hero__kicker"><span class="hero__kicker-dot"></span>{{ home.hero.kicker }} — {{ site.location }}</p>
+      <h1 class="hero__title" id="heroTitle">
+        <span class="hero__line"><span class="hero__w">{{ home.hero.line1 }}</span></span>
+        <span class="hero__line"><span class="hero__w hero__w--accent">{{ home.hero.line2 }}</span></span>
+        <span class="hero__line"><span class="hero__w">{{ home.hero.line3 }}</span></span>
+      </h1>
+      <p class="hero__lead">{{ home.hero.lead }}</p>
+      <p class="hero__status"><span class="pulse" aria-hidden="true"></span>{{ home.hero.status }}</p>
+      <div class="hero__cta">
+        <a class="btn btn--copper magnetic" href="#projets" data-cursor="link">{{ home.hero.cta_projects }}</a>
+        <a class="btn btn--ghost magnetic" href="{{ root }}assets/{{ site.cv }}" target="_blank" data-cursor="link">{{ home.hero.cta_cv }}</a>
+      </div>
+    </div>
+    <figure class="hero__photo" id="heroPhoto">
+      <div class="hero__frame">
+        <picture>
+          <source srcset="{{ root }}assets/img/thomas.webp" type="image/webp">
+          <img src="{{ root }}assets/img/thomas.jpg" alt="{{ site.name }}" width="900" height="1125" loading="eager" fetchpriority="high">
+        </picture>
+      </div>
+      <span class="hero__badge hero__badge--a"><b>HES-SO</b>Master Data Science</span>
+      <span class="hero__badge hero__badge--b"><b>8</b>{{ site.nav.projects | lower }}</span>
+      <span class="hero__badge hero__badge--c"><b>2</b>{{ home.hero.badge_alternance }}</span>
+      <figcaption>{{ site.name }} · Lausanne</figcaption>
+    </figure>
+  </div>
+  <a class="hero__scroll" href="#manifeste" aria-label="{{ site.ui.scroll }}"><span>{{ site.ui.scroll }}</span><i></i></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+    {% for w in home.marquee %}<span>{{ w }}</span><i>✦</i>{% endfor %}
+  </div>
+</div>
+
+<section class="manifesto" id="manifeste">
+  <div class="manifesto__sticky">
+    <h2 class="manifesto__title reveal-words">{{ home.manifesto.title }}</h2>
+    <p class="manifesto__sub reveal">{{ home.manifesto.sub }}</p>
+  </div>
+  <ol class="manifesto__list">
+    {% for it in home.manifesto["items"] %}
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">0{{ loop.index }}</span>
+      <h3>{{ it.h }}</h3>
+      <p>{{ it.p }}</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="projects" id="projets">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">{{ site.nav.projects }} · 0{{ projects|length }}</p>
+    <h2 class="reveal-words">{{ home.projects_title }}</h2>
+    <p class="section__lead reveal">{{ home.projects_lead }}</p>
+  </header>
+  <div class="stack" id="stack">
+    {% for p in projects %}
+    <article class="card mood-{{ p.theme.mood }}" data-sig="{{ p.theme.sig }}" style="--pbg:{{ p.theme.bg }};--pbg2:{{ p.theme.bg2 }};--pink:{{ p.theme.ink }};--pac:{{ p.theme.accent }};--pac2:{{ p.theme.accent2 }};--pfont:{{ p.theme.display }};--pmuted:{{ p.theme.muted }};--i:{{ loop.index0 }}">
+      <a class="card__link" href="{{ p.href }}" data-cursor="view" aria-label="{{ site.ui.open }} — {{ p.title }}">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">{{ '%02d' % loop.index }}</span><span class="card__period">{{ p.period }}</span></p>
+          <h3 class="card__title">{{ p.title }}</h3>
+          <p class="card__sub">{{ p.subtitle }}</p>
+          <p class="card__short">{{ p.short }}</p>
+          <p class="card__tags">{% for s in p.theme.tags %}<i>{{ s }}</i>{% endfor %}</p>
+          <span class="card__go"><span>{{ site.ui.open }}</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="path" id="parcours">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">{{ site.nav.path }}</p>
+    <h2 class="reveal-words">{{ home.path_title }}</h2>
+    <p class="section__lead reveal">{{ home.path_lead }}</p>
+  </header>
+  <ol class="tl">
+    <span class="tl__rail" aria-hidden="true"><span class="tl__progress"></span></span>
+    {% for e in path %}
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">{{ e.when }}</time>
+      <div class="tl__body">
+        <h3>{{ e.what }}</h3>
+        <p class="tl__where">{{ e.where }}</p>
+        <p>{{ e.p }}</p>
+        <p class="tl__tags">{% for t in e.tags %}<span>{{ t }}</span>{% endfor %}{% if e.project %}<a class="tl__link" href="{{ ('projects' if lang == 'en' else 'projets') }}/{{ e.project }}.html" data-cursor="link">{{ site.ui.open }} →</a>{% endif %}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="skills" id="competences">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">{{ site.nav.skills }}</p>
+    <h2 class="reveal-words">{{ home.skills_title }}</h2>
+    <p class="section__lead reveal">{{ home.skills_lead }}</p>
+  </header>
+  <div class="skills__grid">
+    {% for g in skills %}
+    <div class="skills__group reveal" style="--gi:{{ loop.index0 }}">
+      <h3><span class="skills__n">0{{ loop.index }}</span>{{ g.h }}</h3>
+      <ul class="chips">{% for it in g["items"] %}<li class="chip" style="--ci:{{ loop.index0 }}">{{ it }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+    <div class="skills__group skills__group--lang reveal">
+      <h3><span class="skills__n">0{{ skills|length + 1 }}</span>{{ home.languages_title }}</h3>
+      <ul class="langs">{% for name, level in languages %}<li><span>{{ name }}</span><em>{{ level }}</em></li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="moi">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">{{ site.nav.about }}</p>
+    <h2 class="reveal-words">{{ home.about_title }}</h2>
+  </header>
+  <div class="about__grid">
+    <div class="about__ney reveal">
+      <div class="ney" id="ney">
+        <canvas class="ney__breath" id="neyBreath" aria-hidden="true"></canvas>
+        <svg class="ney__svg" viewBox="0 0 900 140" aria-label="{{ home.about.ney_h }}" role="img">
+          <defs>
+            <linearGradient id="reed" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E7C994"/><stop offset=".45" stop-color="#C9A063"/><stop offset="1" stop-color="#8A6232"/>
+            </linearGradient>
+            <linearGradient id="reedShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <g class="ney__body">
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reed)"/>
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reedShade)"/>
+            <!-- nœuds du roseau -->
+            {% for x in [150, 250, 352, 452, 552, 652, 752] %}<rect x="{{ x }}" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/>{% endfor %}
+            <!-- embouchure -->
+            <ellipse cx="60" cy="70" rx="7" ry="18" fill="#3A2810"/>
+            <ellipse cx="60" cy="70" rx="4" ry="12" fill="#120B04"/>
+            <rect x="840" y="48" width="22" height="44" rx="4" fill="#8A6232"/>
+            <ellipse cx="862" cy="70" rx="5" ry="18" fill="#2A1C0C"/>
+          </g>
+          <!-- trous : 6 devant + 1 derrière -->
+          <g class="ney__holes">
+            {% set notes = [('D5','ré'), ('C5','do'), ('Bb4','si♭'), ('A4','la'), ('G4','sol'), ('F4','fa'), ('E4','mi')] %}
+            {% for x in [400, 470, 540, 610, 680, 750] %}
+            <g class="hole" data-note="{{ notes[loop.index0][0] }}" tabindex="0" role="button" aria-label="{{ notes[loop.index0][1] }}">
+              <circle class="hole__halo" cx="{{ x }}" cy="70" r="26"/>
+              <circle class="hole__ring" cx="{{ x }}" cy="70" r="12"/>
+              <circle class="hole__in" cx="{{ x }}" cy="70" r="8"/>
+              <text class="hole__label" x="{{ x }}" y="118" text-anchor="middle">{{ notes[loop.index0][1] }}</text>
+            </g>
+            {% endfor %}
+            <g class="hole hole--back" data-note="E4" tabindex="0" role="button" aria-label="{{ notes[6][1] }}">
+              <circle class="hole__halo" cx="330" cy="36" r="24"/>
+              <circle class="hole__ring" cx="330" cy="36" r="10"/>
+              <circle class="hole__in" cx="330" cy="36" r="6"/>
+              <text class="hole__label" x="330" y="18" text-anchor="middle">{{ notes[6][1] }}</text>
+            </g>
+          </g>
+        </svg>
+        <div class="ney__ui">
+          <button class="btn btn--ghost btn--sm" id="neyPlay" type="button" data-cursor="link">{{ site.ui.listen }}</button>
+          <span class="ney__hint">{{ home.about.ney_hint }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__text">
+      <h3 class="reveal">{{ home.about.ney_h }}</h3>
+      <p class="reveal">{{ home.about.ney_p1 }}</p>
+      <p class="reveal">{{ home.about.ney_p2 }}</p>
+      <h3 class="reveal">{{ home.about.more_h }}</h3>
+      <ul class="about__more">
+        {% for m in home.about.more %}<li class="reveal">{{ m }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
+  <p class="section__eyebrow reveal">{{ site.nav.contact }}</p>
+  <h2 class="reveal-words">{{ home.contact.title }}</h2>
+  <p class="contact__p reveal">{{ home.contact.p }}</p>
+  <a class="contact__mail magnetic reveal" href="mailto:{{ site.email }}" data-cursor="link" data-copy="{{ site.email }}"><span class="contact__mail-text">{{ site.email }}</span><span class="contact__mail-hint">{{ site.ui.email_me }} ↗</span></a>
+  <ul class="contact__list reveal">
+    <li><a href="{{ site.linkedin }}" target="_blank" rel="me noopener" data-cursor="link">LinkedIn</a></li>
+    <li><a href="{{ site.github }}" target="_blank" rel="me noopener" data-cursor="link">GitHub</a></li>
+    <li><a href="{{ root }}assets/{{ site.cv }}" target="_blank" data-cursor="link">{{ site.ui.download_cv }}</a></li>
+    <li><a href="tel:{{ site.phone | replace(' ', '') }}" data-cursor="link">{{ site.phone }}</a></li>
+  </ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ root }}assets/js/sig/all.js" defer></script>
+<script src="{{ root }}assets/js/home.js" defer></script>
+{% endblock %}

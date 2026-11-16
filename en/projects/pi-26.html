@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital power outages — Thomas Maksimous</title>
+<meta name="description" content="Prediction model for hospital power outages from multi-country, weather and grid data. LightGBM, strict temporal validation, SHAP and a simulation interface.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#070B12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hospital power outages — Thomas Maksimous">
+<meta property="og:description" content="Prediction model for hospital power outages from multi-country, weather and grid data. LightGBM, strict temporal validation, SHAP and a simulation interface.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/pi-26.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#070B12;--bg2:#0E1623;--ink:#EEF2F7;--muted:#8A96A8;
+  --accent:#FFC53D;--accent2:#3BD0FF;--line:rgba(238,242,247,.12);
+  --display:'Archivo', sans-serif;--body:'Archivo', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-night">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>03</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/pi-26.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="grid" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>March — June 2026</span><span>HES-SO integration project, Master&#39;s in Data Science.</span></p>
+    <h1 class="phero__title" id="pTitle">Hospital power outages</h1>
+    <p class="phero__sub">Predict the outage before it switches off the OR</p>
+    <p class="phero__tags"><i>LightGBM</i><i>SHAP</i><i>Pandas</i><i>Streamlit</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">In a Ugandan hospital, a power cut is not an inconvenience: it&#39;s a ventilator stopping. Lacor Hospital has logged its consumption every fifteen minutes for years; nobody had yet tried to read the moment of the next outage in that data.</p><p class="pintro__p reveal">The goal: estimate the probability of an outage within one hour, three hours, six hours — and explain why.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Data pipeline, feature engineering, model training and comparison, interpretability, Streamlit app.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Python</li><li style="--ci:1">Pandas</li><li style="--ci:2">LightGBM</li><li style="--ci:3">XGBoost</li><li style="--ci:4">Scikit-learn</li><li style="--ci:5">SHAP</li><li style="--ci:6">Streamlit</li><li style="--ci:7">Open-Meteo</li><li style="--ci:8">Electricity Maps API</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/PI_26" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/PI_26 ↗</a></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Data that doesn&#39;t speak the same language</h2>
+      <p>Lacor&#39;s consumption (Uganda), hourly profiles of ten NHS hospitals (UK) and five New York buildings (LL84), Open-Meteo historical weather, EAGLE-I county-level outages, grid load and mix via Electricity Maps. Everything is resampled to the hour and merged into a multi-site dataset.</p>
+<ul><li>Eight ingestion scripts, one per source</li><li>Resampling and temporal alignment</li><li>Target: is_outage, heavily imbalanced</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Not lying to yourself about validation</h2>
+      <p>With time series, a random split gives beautiful, wrong scores. I enforced TimeSeriesSplit in cross-validation, a chronological hold-out and a rolling-origin walk-forward backtest. Random Forest, XGBoost and LightGBM compared under those conditions: LightGBM wins, with an F1 of 0.763 under strict temporal validation.</p>
+<ul><li>Temporal, weather and grid-load features</li><li>GridSearchCV + TimeSeriesSplit</li><li>Adaptive calibration (isotonic / sigmoid / none) by Brier score</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Explain, then simulate</h2>
+      <p>SHAP values show what drives the risk up: the load of the last few hours, temperature, time of day. A Streamlit app lets you play with those variables, enter GPS coordinates to fetch the grid zone, and read the risk for the 1h, 3h and 6h horizons.</p>
+<ul><li>SHAP TreeExplainer, global and local importance</li><li>One model per forecast horizon</li><li>Streamlit simulation interface</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="0.763">0.763</strong><span>LightGBM F1 under strict temporal validation</span></li><li class="reveal"><strong data-count="3">3</strong><span>forecast horizons: 1h, 3h, 6h</span></li><li class="reveal"><strong data-count="16">16</strong><span>hospital sites across three countries</span></li><li class="reveal"><strong data-count="≈ 0.96">≈ 0.96</strong><span>ROC AUC in walk-forward backtest</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="iassou3.html" data-cursor="link" style="--nbg:#120A2A;--nac:#F6B73C;--nfont:&#39;Syne&#39;, sans-serif"><small>← Previous project</small><span>IAssou3</span></a>
+  <a class="pfoot__next" href="dsm-gestion.html" data-cursor="link" style="--nbg:#0B1F4D;--nac:#F28C28;--nfont:&#39;Barlow Condensed&#39;, sans-serif"><small>Next project →</small><span>DSM Gestion</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

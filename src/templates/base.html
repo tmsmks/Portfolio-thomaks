@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" data-page="{{ page }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.title }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<meta name="author" content="{{ site.name }}">
+<meta name="theme-color" content="{% block themecolor %}#070A12{% endblock %}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:image" content="{{ root }}assets/img/thomas.jpg">
+<meta property="og:locale" content="{{ 'fr_FR' if lang == 'fr' else 'en_US' }}">
+<link rel="alternate" hreflang="{{ 'en' if lang == 'fr' else 'fr' }}" href="{{ alt_href }}">
+<link rel="icon" href="{{ root }}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={% block fonts %}{{ theme.fonts }}{% endblock %}&display=swap">
+<link rel="stylesheet" href="{{ root }}assets/css/base.css">
+{% block head %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#main">{{ site.ui.skip }}</a>
+{% block preloader %}{% endblock %}
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+{% block nav %}{% endblock %}
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">{{ site.footer.made }}</p>
+    <p class="foot__meta">© 2026 {{ site.name }} · {{ site.footer.rights }}</p>
+    <p class="foot__links"><a href="mailto:{{ site.email }}">{{ site.email }}</a> · <a href="{{ site.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a> · <a href="{{ site.github }}" rel="me noopener" target="_blank">GitHub</a> · <a href="{{ root }}assets/{{ site.cv }}" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="{{ root }}assets/js/app.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
