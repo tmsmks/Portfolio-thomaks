@@ -111,7 +111,7 @@
         <div class="card__visual"><canvas class="card__sig"></canvas></div>
         <div class="card__body">
           <p class="card__meta"><span class="card__idx">{{ '%02d' % loop.index }}</span><span class="card__period">{{ p.period }}</span></p>
-          <h3 class="card__title">{{ p.title }}</h3>
+          <h3 class="card__title{% if p.title|length > 28 %} card__title--long{% endif %}">{{ p.title }}</h3>
           <p class="card__sub">{{ p.subtitle }}</p>
           <p class="card__short">{{ p.short }}</p>
           <p class="card__tags">{% for s in p.theme.tags %}<i>{{ s }}</i>{% endfor %}</p>

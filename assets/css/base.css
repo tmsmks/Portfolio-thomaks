@@ -463,3 +463,5 @@ html.js .pside.is-in .pside__stack li { animation: chip .6s var(--ease-out) both
 section[id] { scroll-margin-top: var(--navh); }
 
 @media (min-width: 521px) { .hero__w { white-space: nowrap; } }
+.phero__title--long { font-size: clamp(40px, 6vw, 96px); max-width: 16ch; }
+.card__title--long { font-size: clamp(28px, 2.9vw, 46px); }
