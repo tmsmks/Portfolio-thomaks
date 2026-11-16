@@ -12,7 +12,7 @@ HOME_THEME = {
 }
 
 THEMES = {
-    "end-of-life": {
+    "livres-interactifs": {
         "tags": ["Python", "Flask", "OpenAI", "Ollama"],
         "preview_font": "Newsreader:ital,wght@0,500;1,500",
         "fonts": "Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600",

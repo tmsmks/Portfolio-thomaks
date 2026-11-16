@@ -28,9 +28,9 @@ SITE = {
 HOME = {
     "hero": {
         "kicker": "Portfolio 2026",
-        "line1": "Je transforme",
-        "line2": "des données en outils",
-        "line3": "qu'on utilise vraiment.",
+        "line1": "Data scientist,",
+        "line2": "bâtisseur",
+        "line3": "dans l'âme.",
         "lead": "Étudiant en Master Data Science à la HES-SO Lausanne, je pars d'un besoin concret — un hôpital, une conférence, une entreprise du bâtiment — et je vais jusqu'à la mise en production.",
         "status": "Recherche un CDI AI Engineer / Data Scientist junior — disponible dès mars 2027",
         "cta_projects": "Découvrir mes projets",
@@ -76,7 +76,7 @@ HOME = {
 
 PATH = [
     {"when": "2026 — 2027", "where": "CHUV · UNIL · HES-SO, Lausanne", "what": "Travail de Master — serious game & IA pour la formation des soignants",
-     "p": "Serious game narratif piloté par LLM pour former les futurs soignants au savoir-être. Bascule LLM cloud / local pour les données de santé, scoring de 7 compétences relationnelles (accord experts ICC = 0,90), scénario de 1 100+ choix généré par IA et validé par des experts.", "tags": ["Python", "Flask", "PostgreSQL", "OpenAI", "Ollama"], "project": "end-of-life"},
+     "p": "Serious game narratif piloté par LLM pour former les futurs soignants au savoir-être. Bascule LLM cloud / local pour les données de santé, scoring de 7 compétences relationnelles (accord experts ICC = 0,90), scénario de 1 100+ choix généré par IA et validé par des experts.", "tags": ["Python", "Flask", "PostgreSQL", "OpenAI", "Ollama"], "project": "livres-interactifs"},
     {"when": "2025 — 2027", "where": "HES-SO, Lausanne", "what": "Master en Ingénierie — spécialisation Data Science",
      "p": "Machine Learning, Deep Learning, NLP (LLM & RAG), analyse statistique, modélisation prédictive, MLOps, applications mobiles avancées.", "tags": ["ML", "Deep Learning", "NLP", "MLOps"]},
     {"when": "2024 — 2025", "where": "WAAT, Malakoff (Paris)", "what": "Data Analyst & automatisation des données — alternance",
@@ -99,15 +99,15 @@ LANGUAGES = [("Français", "C2 · bilingue"), ("Arabe égyptien", "C2 · bilingu
 
 PROJECTS = [
     {
-        "slug": "end-of-life",
-        "title": "End of Life",
+        "slug": "livres-interactifs",
+        "title": "Livres interactifs pour l'apprentissage en médecine",
         "subtitle": "Un livre dont le lecteur est le soignant",
         "short": "Serious game narratif piloté par LLM pour former les futurs soignants au savoir-être en soins palliatifs. Travail de Master avec le CHUV et l'UNIL.",
         "period": "Février 2026 — février 2027",
         "context": "Travail de Master HES-SO, en partenariat avec le CHUV et l'UNIL. Suite de mon projet d'approfondissement.",
         "role": "Conception et développement complet : architecture, backend, interface, intégration LLM, modèle de scoring, déploiement.",
         "intro": [
-            "Annoncer une mauvaise nouvelle, écouter un silence, tenir une main : ça ne s'apprend pas dans un amphi. End of Life est un livre interactif où l'étudiant en médecine vit une histoire de soins palliatifs, fait des choix à chaque scène, et découvre ce que ces choix disent de ses compétences relationnelles.",
+            "Annoncer une mauvaise nouvelle, écouter un silence, tenir une main : ça ne s'apprend pas dans un amphi. Dans ces livres interactifs, l'étudiant en médecine vit une histoire de soins palliatifs, fait des choix à chaque scène et découvre ce que ces choix disent de ses compétences relationnelles.",
             "Le projet existait déjà sous forme de scénario écrit. Ma mission : en faire un outil utilisable par une promotion entière, enrichi par l'IA, et mesurable par les formateurs.",
         ],
         "sections": [

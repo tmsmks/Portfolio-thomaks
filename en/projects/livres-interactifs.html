@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive books for medical education — Thomas Maksimous</title>
+<meta name="description" content="LLM-driven narrative serious game to train future caregivers in palliative-care soft skills. Master&#39;s thesis with CHUV and UNIL.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#14110E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Interactive books for medical education — Thomas Maksimous">
+<meta property="og:description" content="LLM-driven narrative serious game to train future caregivers in palliative-care soft skills. Master&#39;s thesis with CHUV and UNIL.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/livres-interactifs.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#14110E;--bg2:#1E1915;--ink:#F3EBDD;--muted:#A89C8A;
+  --accent:#8FB37A;--accent2:#D9636F;--line:rgba(243,235,221,.14);
+  --display:'Newsreader', Georgia, serif;--body:'Instrument Sans', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-paper">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>01</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/livres-interactifs.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="graph" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>February 2026 — February 2027</span><span>HES-SO Master&#39;s thesis, in partnership with CHUV and UNIL. Continuation of my in-depth project.</span></p>
+    <h1 class="phero__title phero__title--long" id="pTitle">Interactive books for medical education</h1>
+    <p class="phero__sub">A book whose reader is the caregiver</p>
+    <p class="phero__tags"><i>Python</i><i>Flask</i><i>OpenAI</i><i>Ollama</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Breaking bad news, listening to a silence, holding a hand: none of that is learned in a lecture hall. In these interactive books, a medical student lives through a palliative-care story, makes a choice at every scene and discovers what those choices say about their relational skills.</p><p class="pintro__p reveal">The project already existed as a written scenario. My job: turn it into a tool usable by a whole cohort, enriched by AI, and measurable by trainers.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Full design and development: architecture, backend, interface, LLM integration, scoring model, deployment.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Python</li><li style="--ci:1">Flask</li><li style="--ci:2">Jinja</li><li style="--ci:3">PostgreSQL / Supabase</li><li style="--ci:4">SQLAlchemy</li><li style="--ci:5">OpenAI API</li><li style="--ci:6">Ollama · Llama 3.1</li><li style="--ci:7">vis-network</li><li style="--ci:8">pytest</li><li style="--ci:9">Render</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/PA_26_EOL" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/PA_26_EOL ↗</a><span class="pside__private">Private repository — code on request</span></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="pgallery">
+  <div class="pgallery__track" id="gallery">
+    <figure class="pgallery__item reveal">
+      <img src="../../assets/img/eol-scene.webp" alt="Entering a scene: the characters present and the situation" loading="lazy" width="1600" height="1000">
+      <figcaption>Entering a scene: the characters present and the situation</figcaption>
+    </figure>
+    <figure class="pgallery__item reveal">
+      <img src="../../assets/img/eol-feedback.webp" alt="End of scene: every choice is explained and the best-adjusted answer is shown" loading="lazy" width="1600" height="1000">
+      <figcaption>End of scene: every choice is explained and the best-adjusted answer is shown</figcaption>
+    </figure>
+    <figure class="pgallery__item reveal">
+      <img src="../../assets/img/eol-graph.webp" alt="Graph editor: a chapter seen as a graph of scenes and answers" loading="lazy" width="1600" height="863">
+      <figcaption>Graph editor: a chapter seen as a graph of scenes and answers</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">The scenario as a graph</h2>
+      <p>Each chapter is a graph of scenes, interactions and answers. I built a graphical editor (vis-network) where trainers see the main thread, the branches and the dead ends, and fix the scenario live with automatic link validation. The same graph becomes the player&#39;s path mode, their route drawn in green as they go.</p>
+<ul><li>Scenario editor with live validation</li><li>Atomic saves with fingerprint, concurrent overwrites refused</li><li>Mermaid / JSON export of the books</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">AI that writes with the experts, not instead of them</h2>
+      <p>An enrichment module proposes new answers oriented towards a given relational skill (empathy, listening, clarity…), filters duplicates and leaves the decision to the trainer. Over 1,100 choices were generated this way, then reviewed and validated by domain experts. The LLM backend is interchangeable: OpenAI in the cloud, or Llama 3.1 through Ollama locally when the data is sensitive.</p>
+<ul><li>Strategy pattern OpenAI ↔ Ollama</li><li>Context-aware prompts (scene, history, target skill)</li><li>Semantic filtering of redundant proposals</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Grading soft skills without caricaturing them</h2>
+      <p>The browser only sends the indices of the chosen answers; the server replays the path and computes a score out of 100 per skill, weighted by the relative quality of the options available at each moment. A scoring key was validated against an expert panel: inter-rater agreement ICC = 0.90. At the end of the book, personalised feedback is generated by LLM (with a non-AI fallback).</p>
+<ul><li>7 relational skills scored</li><li>Graded runs vs. practice runs (anti-memorisation)</li><li>Trainer dashboard, XLSX / CSV / JSON exports, per-participant history</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">04</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Making it production-grade</h2>
+      <p>Clean Architecture (domain, repositories, services, views), admin-created accounts and roles, CSRF, pytest, deployment on Render with Supabase PostgreSQL. The pilot with students is prepared with a protocol and consent documents.</p>
+    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="0.90">0.90</strong><span>inter-expert agreement (ICC) on the scoring key</span></li><li class="reveal"><strong data-count="1,100+">1,100+</strong><span>AI-generated choices validated by experts</span></li><li class="reveal"><strong data-count="7">7</strong><span>relational skills measured</span></li><li class="reveal"><strong data-count="2">2</strong><span>LLM backends, cloud or 100% local</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="mlops.html" data-cursor="link" style="--nbg:#0E1116;--nac:#4D7CFF;--nfont:&#39;JetBrains Mono&#39;, ui-monospace, monospace"><small>← Previous project</small><span>MLOps pipeline</span></a>
+  <a class="pfoot__next" href="iassou3.html" data-cursor="link" style="--nbg:#120A2A;--nac:#F6B73C;--nfont:&#39;Syne&#39;, sans-serif"><small>Next project →</small><span>IAssou3</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

@@ -29,7 +29,7 @@
   <div class="phero__fade" aria-hidden="true"></div>
   <div class="phero__inner">
     <p class="phero__meta"><span>{{ p.period }}</span><span>{{ p.context }}</span></p>
-    <h1 class="phero__title" id="pTitle">{{ p.title }}</h1>
+    <h1 class="phero__title{% if p.title|length > 28 %} phero__title--long{% endif %}" id="pTitle">{{ p.title }}</h1>
     <p class="phero__sub">{{ p.subtitle }}</p>
     <p class="phero__tags">{% for s in theme.tags %}<i>{{ s }}</i>{% endfor %}</p>
   </div>
