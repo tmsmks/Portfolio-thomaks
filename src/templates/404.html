@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}404 — {{ site.name }}{% endblock %}
+{% block bodyclass %}home notfound{% endblock %}
+{% block nav %}{% endblock %}
+{% block main %}
+<section class="contact" style="min-height:80vh;display:flex;flex-direction:column;justify-content:center">
+  <h2>404</h2>
+  <p class="contact__p">Cette page n'existe pas (ou plus). / This page doesn't exist (anymore).</p>
+  <ul class="contact__list"><li><a href="{{ root }}index.html">Accueil</a></li><li><a href="{{ root }}en/index.html">Home</a></li></ul>
+</section>
+{% endblock %}

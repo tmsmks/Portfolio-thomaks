@@ -1,383 +1,455 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-page="home">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio compétences informatiques - Thomas MAKSIMOUS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="assets/styles.css" rel="stylesheet">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Maksimous — AI Engineer &amp; Data Scientist junior</title>
+<meta name="description" content="Portfolio de Thomas Maksimous, étudiant en Master Data Science à la HES-SO Lausanne. Projets IA, machine learning et applications livrées en production. Recherche CDI dès mars 2027.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#070A12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thomas Maksimous — AI Engineer &amp; Data Scientist junior">
+<meta property="og:description" content="Portfolio de Thomas Maksimous, étudiant en Master Data Science à la HES-SO Lausanne. Projets IA, machine learning et applications livrées en production. Recherche CDI dès mars 2027.">
+<meta property="og:image" content="assets/img/thomas.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500..800&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;1,500&family=Syne:wght@800&family=Archivo:wdth,wght@110,800&family=Barlow+Condensed:wght@800&family=DM+Serif+Display&family=Outfit:wght@700&family=Fraunces:wght@600&family=JetBrains+Mono:wght@700&display=swap">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-gray-800">Portfolio Compétences</h1>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="nav-link text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Accueil</a>
-                        <a href="parcours.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Parcours</a>
-                        <a href="competence4.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 4</a>
-                        <a href="competence5.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 5</a>
-                        <a href="competence6.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Compétence 6</a>
-                        <a href="conclusion.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conclusion</a>
-                        <a href="documents.html" class="nav-link text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Documents</a>
-                    </div>
-                </div>
-            </div>
+<body class="home">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <p class="loader__name"><span>T</span><span>h</span><span>o</span><span>m</span><span>a</span><span>s</span><span class="loader__sp"> </span><span>M</span><span>a</span><span>k</span><span>s</span><span>i</span><span>m</span><span>o</span><span>u</span><span>s</span></p>
+    <p class="loader__count"><span id="loaderCount">00</span></p>
+    <p class="loader__bar"><span id="loaderBar"></span></p>
+  </div>
+</div>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="Thomas Maksimous"><span class="nav__mono">TM</span><span class="nav__name">Thomas Maksimous</span></a>
+  <nav class="nav__links" aria-label="Menu">
+    <a href="#projets" data-cursor="link">Projets</a>
+    <a href="#parcours" data-cursor="link">Parcours</a>
+    <a href="#competences" data-cursor="link">Compétences</a>
+    <a href="#moi" data-cursor="link">Moi</a>
+    <a href="#contact" data-cursor="link">Contact</a>
+  </nav>
+  <div class="nav__tools">
+    <a class="nav__lang" href="en/index.html" title="Read in English" hreflang="en">EN</a>
+    <a class="btn btn--ghost btn--sm nav__cv" href="assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a>
+  </div>
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#projets">Projets</a>
+  <a href="#parcours">Parcours</a>
+  <a href="#competences">Compétences</a>
+  <a href="#moi">Moi</a>
+  <a href="#contact">Contact</a>
+  <a href="en/index.html" class="mnav__lang">EN</a>
+</div>
+<main id="main">
+<section class="hero">
+  <canvas class="hero__breath" id="breath" aria-hidden="true"></canvas>
+  <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+  <div class="hero__grid">
+    <div class="hero__text">
+      <p class="hero__kicker"><span class="hero__kicker-dot"></span>Portfolio 2026 — Lausanne (VD), Suisse</p>
+      <h1 class="hero__title" id="heroTitle">
+        <span class="hero__line"><span class="hero__w">Je construis des systèmes</span></span>
+        <span class="hero__line"><span class="hero__w hero__w--accent">d&#39;IA qui servent</span></span>
+        <span class="hero__line"><span class="hero__w">des gens réels.</span></span>
+      </h1>
+      <p class="hero__lead">Étudiant en Master Data Science à la HES-SO Lausanne, je pars d&#39;un besoin concret — un hôpital, une conférence, une entreprise du bâtiment — et je vais jusqu&#39;à la mise en production.</p>
+      <p class="hero__status"><span class="pulse" aria-hidden="true"></span>Recherche un CDI AI Engineer / Data Scientist junior — disponible dès mars 2027</p>
+      <div class="hero__cta">
+        <a class="btn btn--copper magnetic" href="#projets" data-cursor="link">Découvrir mes projets</a>
+        <a class="btn btn--ghost magnetic" href="assets/CV_Thomas_Maksimous.pdf" target="_blank" data-cursor="link">Mon CV</a>
+      </div>
+    </div>
+    <figure class="hero__photo" id="heroPhoto">
+      <div class="hero__frame">
+        <picture>
+          <source srcset="assets/img/thomas.webp" type="image/webp">
+          <img src="assets/img/thomas.jpg" alt="Thomas Maksimous" width="900" height="1125" loading="eager" fetchpriority="high">
+        </picture>
+      </div>
+      <span class="hero__badge hero__badge--a"><b>HES-SO</b>Master Data Science</span>
+      <span class="hero__badge hero__badge--b"><b>8</b>projets</span>
+      <span class="hero__badge hero__badge--c"><b>2</b>ans d&#39;alternance</span>
+      <figcaption>Thomas Maksimous · Lausanne</figcaption>
+    </figure>
+  </div>
+  <a class="hero__scroll" href="#manifeste" aria-label="Défiler"><span>Défiler</span><i></i></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+<span>Machine Learning</span><i>✦</i><span>LLM &amp; RAG</span><i>✦</i><span>Python</span><i>✦</i><span>Next.js</span><i>✦</i><span>React Native</span><i>✦</i><span>Flutter</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Supabase</span><i>✦</i><span>LightGBM</span><i>✦</i><span>SHAP</span><i>✦</i><span>Ollama</span><i>✦</i><span>Docker</span><i>✦</i><span>ETL</span><i>✦</i><span>Power BI</span><i>✦</i><span>Streamlit</span><i>✦</i><span>Flask</span><i>✦</i>  </div>
+</div>
+
+<section class="manifesto" id="manifeste">
+  <div class="manifesto__sticky">
+    <h2 class="manifesto__title reveal-words">Comprendre, construire, livrer.</h2>
+    <p class="manifesto__sub reveal">Trois réflexes que j&#39;ai pris en alternance et que je garde sur chaque projet.</p>
+  </div>
+  <ol class="manifesto__list">
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">01</span>
+      <h3>Partir du métier</h3>
+      <p>Deux années d&#39;alternance m&#39;ont appris à écouter d&#39;abord : ce que fait vraiment le secrétariat d&#39;une PME, ce qu&#39;attend un soignant, ce que regarde un dirigeant dans un tableau de bord.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">02</span>
+      <h3>Bâtir de bout en bout</h3>
+      <p>Données, modèle, API, interface, déploiement. J&#39;aime tenir toute la chaîne et voir une idée devenir un outil que quelqu&#39;un ouvre tous les matins.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">03</span>
+      <h3>Apprendre en faisant</h3>
+      <p>Chaque projet est une excuse pour une technologie que je ne connaissais pas la veille : Flutter, Expo, LightGBM, Ollama, DVC. Je lis, je casse, je recommence.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+  </ol>
+</section>
+
+<section class="projects" id="projets">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Projets · 08</p>
+    <h2 class="reveal-words">Projets</h2>
+    <p class="section__lead reveal">Huit projets, huit univers. Chaque page a son propre style — comme chaque projet avait son propre problème.</p>
+  </header>
+  <div class="stack" id="stack">
+    <article class="card mood-paper" data-sig="graph" style="--pbg:#14110E;--pbg2:#1E1915;--pink:#F3EBDD;--pac:#8FB37A;--pac2:#D9636F;--pfont:&#39;Newsreader&#39;, Georgia, serif;--pmuted:#A89C8A;--i:0">
+      <a class="card__link" href="projets/end-of-life.html" data-cursor="view" aria-label="Voir le projet — End of Life">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">01</span><span class="card__period">Février 2026 — février 2027</span></p>
+          <h3 class="card__title">End of Life</h3>
+          <p class="card__sub">Un livre dont le lecteur est le soignant</p>
+          <p class="card__short">Serious game narratif piloté par LLM pour former les futurs soignants au savoir-être en soins palliatifs. Travail de Master avec le CHUV et l&#39;UNIL.</p>
+          <p class="card__tags"><i>Python</i><i>Flask</i><i>OpenAI</i><i>Ollama</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </div>
-    </nav>
-
-    <!-- Section Accueil -->
-    <!-- Section Accueil -->
-<section class="min-h-screen flex items-center justify-center gradient-bg text-white pt-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-        <div class="mb-12">
-            <div class="w-48 h-48 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm overflow-hidden">
-                <img src="assets/images/pdp.jpeg" alt="Photo de profil" class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-5xl font-bold mb-4">Thomas MAKSIMOUS</h1>
-            <p class="text-xl mb-6 opacity-90">Étudiant en 3ème année de BUT Informatique</p>
-            
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-12">
-                <h2 class="text-2xl font-semibold mb-4">À propos de moi</h2>
-                <p class="text-lg leading-relaxed opacity-90 mb-6">
-                    Étudiant en 3ème année de BUT Informatique à l'IUT de Paris-Est Créteil Vitry et Data Analyst en alternance chez WAAT, 
-                    je m'épanouie dans les environnements où je peux apprendre, expérimenter et contribuer à des projets concrets.
-                </p>
-                <p class="text-lg leading-relaxed opacity-90 mb-8">
-                    J'ai un attrait particulier pour la data, le développement web et l'administration de bases de données. 
-                    L'informatique me stimule par sa capacité à résoudre des problèmes concrets, concevoir des solutions intelligentes 
-                    et répondre à des besoins divers. J'aime comprendre les rouages techniques, résoudre des problèmes complexes, 
-                    automatiser des tâches et créer des solutions utiles et accessibles.
-                </p>
-                
-                <!-- Mes affinités techniques -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-500/20 flex items-center justify-center">
-                            <i class="fas fa-database text-2xl text-blue-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2 text-blue-200">Data</h3>
-                        <p class="text-sm opacity-80">Ce qui me plaît dans la data, c'est la diversité des informations, l'importance qu'elles prennent une fois structurées et le sens qu'elles révèlent une fois liées entre elles.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <i class="fas fa-code text-2xl text-green-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2 text-green-200">Développement</h3>
-                        <p class="text-sm opacity-80">J'aime comprendre et maîtriser l'ensemble d'un projet, du fonctionnement interne à l'expérience utilisateur.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center">
-                            <i class="fas fa-palette text-2xl text-purple-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2 text-purple-200">Design Web</h3>
-                        <p class="text-sm opacity-80">J'aime créer des interfaces à la fois esthétiques, intuitives et fonctionnelles, alliant créativité et technique.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-orange-500/20 flex items-center justify-center">
-                            <i class="fas fa-server text-2xl text-orange-300"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2 text-orange-200">Système</h3>
-                        <p class="text-sm opacity-80">Je m'intéresse aux systèmes et à leur architecture, car j'aime comprendre comment les différentes briques techniques s'articulent.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cartes des Compétences -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <!-- Compétence 4 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 card-hover flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-blue-500/20 flex items-center justify-center">
-                        <i class="fas fa-database text-2xl text-blue-300"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Compétence 4</h3>
-                    <h4 class="text-lg font-medium mb-3 text-blue-200">Gérer des données de l'information</h4>
-                    <p class="text-sm opacity-80 mb-6">
-                        Concevoir, gérer, administrer et exploiter les données de l'entreprise pour un bon pilotage.
-                    </p>
-                    <div class="space-y-2 mb-6">
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Bases de données relationnelles</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Business Intelligence</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Sécurité des données</span>
-                        </div>
-                    </div>
-                    <div class="mt-auto">
-                        <a href="competence4.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
-                            <i class="fas fa-arrow-right mr-2"></i>
-                            Découvrir
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Compétence 5 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 card-hover flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                        <i class="fas fa-tasks text-2xl text-green-300"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Compétence 5</h3>
-                    <h4 class="text-lg font-medium mb-3 text-green-200">Conduire un projet</h4>
-                    <p class="text-sm opacity-80 mb-6">
-                        Organiser et piloter un projet informatique avec des méthodes classiques ou agiles.
-                    </p>
-                    <div class="space-y-2 mb-6">
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Méthodologies Agile</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Gestion de projet</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Communication d'équipe</span>
-                        </div>
-                    </div>
-                    <div class="mt-auto">
-                        <a href="competence5.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
-                            <i class="fas fa-arrow-right mr-2"></i>
-                            Découvrir
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Compétence 6 -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 card-hover flex flex-col">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-purple-500/20 flex items-center justify-center">
-                        <i class="fas fa-handshake text-2xl text-purple-300"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Compétence 6</h3>
-                    <h4 class="text-lg font-medium mb-3 text-purple-200">Collaborer au sein d'une équipe</h4>
-                    <p class="text-sm opacity-80 mb-6">
-                        Travailler efficacement dans une équipe pluridisciplinaire et développer des aptitudes collaboratives.
-                    </p>
-                    <div class="space-y-2 mb-6">
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Communication efficace</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Leadership d'équipe</span>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Résolution de conflits</span>
-                        </div>
-                    </div>
-                    <div class="mt-auto">
-                        <a href="competence6.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
-                            <i class="fas fa-arrow-right mr-2"></i>
-                            Découvrir
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- Objectifs Professionnels -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-12">
-                <h2 class="text-2xl font-semibold mb-6">Objectifs Professionnels</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <i class="fas fa-database text-3xl mb-4 text-blue-300"></i>
-                        <h3 class="text-lg font-semibold mb-2">Administrateur de Base de Données</h3>
-                        <p class="text-sm opacity-80">Gestion et optimisation des systèmes de données</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-chart-line text-3xl mb-4 text-green-300"></i>
-                        <h3 class="text-lg font-semibold mb-2">Data Engineer</h3>
-                        <p class="text-sm opacity-80">Conception et développement de pipelines de données</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-cloud text-3xl mb-4 text-purple-300"></i>
-                        <h3 class="text-lg font-semibold mb-2">Développeur Big Data</h3>
-                        <p class="text-sm opacity-80">Traitement et analyse de données massives</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Compétences Techniques -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-12">
-                <h2 class="text-2xl font-semibold mb-6">Compétences Techniques</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white/10 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4 text-blue-200">
-                            <i class="fas fa-database mr-2"></i>
-                            Bases de Données
-                        </h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span>MongoDB</span>
-                                <span class="text-blue-300">90%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>PostgreSQL</span>
-                                <span class="text-blue-300">85%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>MySQL</span>
-                                <span class="text-blue-300">80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white/10 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4 text-green-200">
-                            <i class="fas fa-code mr-2"></i>
-                            Développement
-                        </h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span>Python</span>
-                                <span class="text-green-300">85%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>JavaScript</span>
-                                <span class="text-green-300">80%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>HTML/CSS</span>
-                                <span class="text-green-300">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white/10 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4 text-purple-200">
-                            <i class="fas fa-chart-bar mr-2"></i>
-                            Data & BI
-                        </h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span>Power BI</span>
-                                <span class="text-purple-300">85%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>ClicData</span>
-                                <span class="text-purple-300">90%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>ETL</span>
-                                <span class="text-purple-300">80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white/10 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold mb-4 text-orange-200">
-                            <i class="fas fa-tools mr-2"></i>
-                            Outils
-                        </h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span>Git</span>
-                                <span class="text-orange-300">85%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>JIRA</span>
-                                <span class="text-orange-300">80%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Teams</span>
-                                <span class="text-orange-300">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Rapide -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-                <h2 class="text-2xl font-semibold mb-6">Navigation Rapide</h2>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="parcours.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-road mr-2"></i>
-                        Parcours
-                    </a>
-                    <a href="competence4.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-database mr-2"></i>
-                        Compétence 4
-                    </a>
-                    <a href="competence5.html" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-tasks mr-2"></i>
-                        Compétence 5
-                    </a>
-                    <a href="competence6.html" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-handshake mr-2"></i>
-                        Compétence 6
-                    </a>
-                    <a href="conclusion.html" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-flag-checkered mr-2"></i>
-                        Conclusion
-                    </a>
-                    <a href="documents.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center">
-                        <i class="fas fa-folder-open mr-2"></i>
-                        Documents
-                    </a>
-                </div>
-            </div>
+      </a>
+    </article>
+    <article class="card mood-neon" data-sig="chat" style="--pbg:#120A2A;--pbg2:#1C1140;--pink:#FBF6FF;--pac:#F6B73C;--pac2:#FF4D8D;--pfont:&#39;Syne&#39;, sans-serif;--pmuted:#B3A4D4;--i:1">
+      <a class="card__link" href="projets/iassou3.html" data-cursor="view" aria-label="Voir le projet — IAssou3">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">02</span><span class="card__period">Avril 2026 — aujourd&#39;hui</span></p>
+          <h3 class="card__title">IAssou3</h3>
+          <p class="card__sub">L&#39;IA qui pose les questions</p>
+          <p class="card__short">Application mobile iOS et Android pour une conférence de 200 personnes : un chatbot qui initie la conversation, des défis notés par IA, et un espace organisateur en temps réel.</p>
+          <p class="card__tags"><i>React Native</i><i>Expo</i><i>Supabase</i><i>OpenAI</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="text-center md:text-left">
-                    <p class="text-lg font-semibold mb-2">Thomas MAKSIMOUS</p>
-                    <p class="text-gray-300">Data Analyst & Étudiant en BUT Informatique</p>
-                    <p class="text-sm text-gray-400 mt-2">&copy; Thomas MAKSIMOUS. Tous droits réservés.</p>
-                </div>
-                <div class="text-center md:text-right">
-                    <div class="flex flex-wrap justify-center md:justify-end gap-4">
-                        <a href="CV_Thomas_MKS.pdf" target="_blank" class="flex items-center text-gray-300 hover:text-white transition-colors">
-                            <i class="fas fa-file-pdf mr-2"></i>
-                            <span class="text-sm">CV</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/thomas-maksimous-635048191/" target="_blank" class="flex items-center text-gray-300 hover:text-blue-400 transition-colors">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            <span class="text-sm">LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/tmsmks" target="_blank" class="flex items-center text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            <span class="text-sm">GitHub</span>
-                        </a>
-                        <a href="mailto:maksimous.t@gmail.com" class="flex items-center text-gray-300 hover:text-white transition-colors">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <span class="text-sm">Email</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      </a>
+    </article>
+    <article class="card mood-night" data-sig="grid" style="--pbg:#070B12;--pbg2:#0E1623;--pink:#EEF2F7;--pac:#FFC53D;--pac2:#3BD0FF;--pfont:&#39;Archivo&#39;, sans-serif;--pmuted:#8A96A8;--i:2">
+      <a class="card__link" href="projets/pi-26.html" data-cursor="view" aria-label="Voir le projet — Coupures d&#39;électricité à l&#39;hôpital">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">03</span><span class="card__period">Mars — juin 2026</span></p>
+          <h3 class="card__title">Coupures d&#39;électricité à l&#39;hôpital</h3>
+          <p class="card__sub">Prédire la panne avant qu&#39;elle n&#39;éteigne le bloc</p>
+          <p class="card__short">Modèle de prédiction des coupures de courant hospitalières à partir de données multi-pays, météo et réseau. LightGBM, validation temporelle stricte, SHAP et interface de simulation.</p>
+          <p class="card__tags"><i>LightGBM</i><i>SHAP</i><i>Pandas</i><i>Streamlit</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </div>
-    </footer>
+      </a>
+    </article>
+    <article class="card mood-blueprint" data-sig="invoice" style="--pbg:#0B1F4D;--pbg2:#122C66;--pink:#F6F8FC;--pac:#F28C28;--pac2:#FFFFFF;--pfont:&#39;Barlow Condensed&#39;, sans-serif;--pmuted:#A9BBE0;--i:3">
+      <a class="card__link" href="projets/dsm-gestion.html" data-cursor="view" aria-label="Voir le projet — DSM Gestion">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">04</span><span class="card__period">2026</span></p>
+          <h3 class="card__title">DSM Gestion</h3>
+          <p class="card__sub">Dictez le devis, l&#39;IA le met en page, le gérant valide</p>
+          <p class="card__short">Logiciel de devis et factures pour une entreprise du bâtiment, avec un assistant IA à qui l&#39;on parle, écrit ou envoie une photo. Rien ne part sans validation humaine.</p>
+          <p class="card__tags"><i>Next.js</i><i>PostgreSQL</i><i>Claude</i><i>Ollama</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-sand" data-sig="map" style="--pbg:#07262B;--pbg2:#0D353B;--pink:#F4EAD2;--pac:#F26B5B;--pac2:#5CC8C2;--pfont:&#39;DM Serif Display&#39;, Georgia, serif;--pmuted:#9DB7B5;--i:4">
+      <a class="card__link" href="projets/triply.html" data-cursor="view" aria-label="Voir le projet — Triply">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">05</span><span class="card__period">Automne 2025</span></p>
+          <h3 class="card__title">Triply</h3>
+          <p class="card__sub">Dream it. Plan it. Live it.</p>
+          <p class="card__short">Application mobile Flutter pour organiser un voyage à plusieurs : itinéraire, budget, check-list, documents et album photo partagés en temps réel.</p>
+          <p class="card__tags"><i>Flutter</i><i>Firebase</i><i>Google Maps</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-fresh" data-sig="curve" style="--pbg:#0B1F17;--pbg2:#122C21;--pink:#EEF8F1;--pac:#3DDC84;--pac2:#FF8A3D;--pfont:&#39;Outfit&#39;, sans-serif;--pmuted:#8FB09F;--i:5">
+      <a class="card__link" href="projets/objectif-prime.html" data-cursor="view" aria-label="Voir le projet — Objectif Prime">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">06</span><span class="card__period">Printemps 2026</span></p>
+          <h3 class="card__title">Objectif Prime</h3>
+          <p class="card__sub">Perdre du poids, mais entre amis</p>
+          <p class="card__short">Application web et mobile de suivi de perte de poids avec groupes privés et classement entre amis. Next.js, Supabase, Open Food Facts.</p>
+          <p class="card__tags"><i>Next.js</i><i>Supabase</i><i>Tailwind</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-forest" data-sig="leaves" style="--pbg:#121F14;--pbg2:#1B2D1E;--pink:#EFF3E4;--pac:#A5D250;--pac2:#D2A05F;--pfont:&#39;Fraunces&#39;, Georgia, serif;--pmuted:#A3B493;--i:6">
+      <a class="card__link" href="projets/ecotracker.html" data-cursor="view" aria-label="Voir le projet — EcoTracker">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">07</span><span class="card__period">2024 — 2025</span></p>
+          <h3 class="card__title">EcoTracker</h3>
+          <p class="card__sub">Une naturothèque pour la biodiversité</p>
+          <p class="card__short">Application collaborative d&#39;observation des espèces : collecte via API, base MongoDB, carte interactive, déploiement. Projet de fin de bachelor en équipe pluridisciplinaire.</p>
+          <p class="card__tags"><i>MongoDB</i><i>API REST</i><i>Python</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-lab" data-sig="dag" style="--pbg:#0E1116;--pbg2:#171B23;--pink:#EDF0F5;--pac:#4D7CFF;--pac2:#19C37D;--pfont:&#39;JetBrains Mono&#39;, ui-monospace, monospace;--pmuted:#8B93A3;--i:7">
+      <a class="card__link" href="projets/mlops.html" data-cursor="view" aria-label="Voir le projet — Pipeline MLOps">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">08</span><span class="card__period">Automne 2025</span></p>
+          <h3 class="card__title">Pipeline MLOps</h3>
+          <p class="card__sub">Du notebook au service déployé, reproductible</p>
+          <p class="card__short">Pipeline d&#39;entraînement versionné avec DVC, suivi MLflow, service FastAPI conteneurisé et déployé sur Google Cloud par GitHub Actions.</p>
+          <p class="card__tags"><i>DVC</i><i>MLflow</i><i>FastAPI</i><i>Docker</i></p>
+          <span class="card__go"><span>Voir le projet</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
 
-    <script src="assets/script.js"></script>
+<section class="path" id="parcours">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Parcours</p>
+    <h2 class="reveal-words">Parcours</h2>
+    <p class="section__lead reveal">De la base de données CRM à la prédiction par IA, en passant par 100 millions de lignes.</p>
+  </header>
+  <ol class="tl">
+    <span class="tl__rail" aria-hidden="true"><span class="tl__progress"></span></span>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2026 — 2027</time>
+      <div class="tl__body">
+        <h3>Travail de Master — serious game &amp; IA pour la formation des soignants</h3>
+        <p class="tl__where">CHUV · UNIL · HES-SO, Lausanne</p>
+        <p>Serious game narratif piloté par LLM pour former les futurs soignants au savoir-être. Bascule LLM cloud / local pour les données de santé, scoring de 7 compétences relationnelles (accord experts ICC = 0,90), scénario de 1 100+ choix généré par IA et validé par des experts.</p>
+        <p class="tl__tags"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>OpenAI</span><span>Ollama</span><a class="tl__link" href="projets/end-of-life.html" data-cursor="link">Voir le projet →</a></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2025 — 2027</time>
+      <div class="tl__body">
+        <h3>Master en Ingénierie — spécialisation Data Science</h3>
+        <p class="tl__where">HES-SO, Lausanne</p>
+        <p>Machine Learning, Deep Learning, NLP (LLM &amp; RAG), analyse statistique, modélisation prédictive, MLOps, applications mobiles avancées.</p>
+        <p class="tl__tags"><span>ML</span><span>Deep Learning</span><span>NLP</span><span>MLOps</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2024 — 2025</time>
+      <div class="tl__body">
+        <h3>Data Analyst &amp; automatisation des données — alternance</h3>
+        <p class="tl__where">WAAT, Malakoff (Paris)</p>
+        <p>Bornes de recharge pour véhicules électriques. Pipelines ETL Python sur ~100 M de lignes issues de 3 API REST (Monta, Zendesk, Selsy), règles de qualité de données automatisées, ~30 tableaux de bord Power BI / ClicData pour des grands comptes (DPD, PSG, Proudreed…), optimisation SQL, restitution à la direction, tutorat de deux stagiaires.</p>
+        <p class="tl__tags"><span>Python</span><span>SQL</span><span>ETL</span><span>Power BI</span><span>ClicData</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2023 — 2024</time>
+      <div class="tl__body">
+        <h3>Administrateur Salesforce &amp; automatisation — alternance</h3>
+        <p class="tl__where">CFA SACEF, Paris</p>
+        <p>Administrateur principal du CRM d&#39;un organisme de formation : recueil des besoins, ~15 processus métier automatisés (Salesforce, Power Automate), portail client en Apex / HTML / CSS, intégrations DocuSign, Gonexa, SurveyMonkey.</p>
+        <p class="tl__tags"><span>Salesforce</span><span>Apex</span><span>Power Automate</span><span>SQL</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2022 — 2025</time>
+      <div class="tl__body">
+        <h3>Bachelor en informatique — administration et exploitation des données</h3>
+        <p class="tl__where">Université Paris-Est Créteil</p>
+        <p>Bases de données, développement web, conduite de projet agile. Projet de fin d&#39;études EcoTracker : une naturothèque collaborative pour la biodiversité.</p>
+        <p class="tl__tags"><span>Bases de données</span><span>Web</span><span>Agile</span><a class="tl__link" href="projets/ecotracker.html" data-cursor="link">Voir le projet →</a></p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="skills" id="competences">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Compétences</p>
+    <h2 class="reveal-words">Compétences</h2>
+    <p class="section__lead reveal">Ce que j&#39;utilise au quotidien, par ordre d&#39;affection.</p>
+  </header>
+  <div class="skills__grid">
+    <div class="skills__group reveal" style="--gi:0">
+      <h3><span class="skills__n">01</span>IA &amp; LLM</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">OpenAI API</li><li class="chip" style="--ci:1">Llama / Ollama</li><li class="chip" style="--ci:2">Anthropic Claude</li><li class="chip" style="--ci:3">Gemini</li><li class="chip" style="--ci:4">RAG</li><li class="chip" style="--ci:5">NLP</li><li class="chip" style="--ci:6">Prompt engineering</li><li class="chip" style="--ci:7">Sorties JSON structurées</li><li class="chip" style="--ci:8">LLM local</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:1">
+      <h3><span class="skills__n">02</span>Machine Learning</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Scikit-learn</li><li class="chip" style="--ci:1">LightGBM</li><li class="chip" style="--ci:2">XGBoost</li><li class="chip" style="--ci:3">PyTorch</li><li class="chip" style="--ci:4">TensorFlow</li><li class="chip" style="--ci:5">SHAP</li><li class="chip" style="--ci:6">Feature engineering</li><li class="chip" style="--ci:7">Validation temporelle</li><li class="chip" style="--ci:8">Calibration</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:2">
+      <h3><span class="skills__n">03</span>Données</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Python / Pandas</li><li class="chip" style="--ci:1">SQL (PostgreSQL, MySQL, SQLite)</li><li class="chip" style="--ci:2">MongoDB</li><li class="chip" style="--ci:3">ETL / pipelines</li><li class="chip" style="--ci:4">Qualité de données</li><li class="chip" style="--ci:5">Power BI</li><li class="chip" style="--ci:6">ClicData</li><li class="chip" style="--ci:7">DVC</li><li class="chip" style="--ci:8">MLflow</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:3">
+      <h3><span class="skills__n">04</span>Développement &amp; déploiement</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Flask</li><li class="chip" style="--ci:1">Streamlit</li><li class="chip" style="--ci:2">Next.js / TypeScript</li><li class="chip" style="--ci:3">React Native / Expo</li><li class="chip" style="--ci:4">Flutter</li><li class="chip" style="--ci:5">Supabase</li><li class="chip" style="--ci:6">Firebase</li><li class="chip" style="--ci:7">Docker</li><li class="chip" style="--ci:8">Git / GitHub Actions</li><li class="chip" style="--ci:9">pytest</li><li class="chip" style="--ci:10">Sentry</li><li class="chip" style="--ci:11">Render / Vercel / EAS</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:4">
+      <h3><span class="skills__n">05</span>Autres</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Java</li><li class="chip" style="--ci:1">JavaScript</li><li class="chip" style="--ci:2">Salesforce (Admin, Apex)</li><li class="chip" style="--ci:3">Power Automate</li><li class="chip" style="--ci:4">Jira / Notion</li><li class="chip" style="--ci:5">Agile / Scrum</li></ul>
+    </div>
+    <div class="skills__group skills__group--lang reveal">
+      <h3><span class="skills__n">06</span>Langues</h3>
+      <ul class="langs"><li><span>Français</span><em>C2 · bilingue</em></li><li><span>Arabe égyptien</span><em>C2 · bilingue</em></li><li><span>Anglais</span><em>C1</em></li><li><span>Italien</span><em>A2</em></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="moi">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Moi</p>
+    <h2 class="reveal-words">Entre deux commits</h2>
+  </header>
+  <div class="about__grid">
+    <div class="about__ney reveal">
+      <div class="ney" id="ney">
+        <canvas class="ney__breath" id="neyBreath" aria-hidden="true"></canvas>
+        <svg class="ney__svg" viewBox="0 0 900 140" aria-label="Le ney" role="img">
+          <defs>
+            <linearGradient id="reed" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E7C994"/><stop offset=".45" stop-color="#C9A063"/><stop offset="1" stop-color="#8A6232"/>
+            </linearGradient>
+            <linearGradient id="reedShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <g class="ney__body">
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reed)"/>
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reedShade)"/>
+            <!-- nœuds du roseau -->
+<rect x="150" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="250" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="352" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="452" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="552" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="652" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="752" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/>            <!-- embouchure -->
+            <ellipse cx="60" cy="70" rx="7" ry="18" fill="#3A2810"/>
+            <ellipse cx="60" cy="70" rx="4" ry="12" fill="#120B04"/>
+            <rect x="840" y="48" width="22" height="44" rx="4" fill="#8A6232"/>
+            <ellipse cx="862" cy="70" rx="5" ry="18" fill="#2A1C0C"/>
+          </g>
+          <!-- trous : 6 devant + 1 derrière -->
+          <g class="ney__holes">
+            <g class="hole" data-note="D5" tabindex="0" role="button" aria-label="ré">
+              <circle class="hole__halo" cx="400" cy="70" r="26"/>
+              <circle class="hole__ring" cx="400" cy="70" r="12"/>
+              <circle class="hole__in" cx="400" cy="70" r="8"/>
+              <text class="hole__label" x="400" y="118" text-anchor="middle">ré</text>
+            </g>
+            <g class="hole" data-note="C5" tabindex="0" role="button" aria-label="do">
+              <circle class="hole__halo" cx="470" cy="70" r="26"/>
+              <circle class="hole__ring" cx="470" cy="70" r="12"/>
+              <circle class="hole__in" cx="470" cy="70" r="8"/>
+              <text class="hole__label" x="470" y="118" text-anchor="middle">do</text>
+            </g>
+            <g class="hole" data-note="Bb4" tabindex="0" role="button" aria-label="si♭">
+              <circle class="hole__halo" cx="540" cy="70" r="26"/>
+              <circle class="hole__ring" cx="540" cy="70" r="12"/>
+              <circle class="hole__in" cx="540" cy="70" r="8"/>
+              <text class="hole__label" x="540" y="118" text-anchor="middle">si♭</text>
+            </g>
+            <g class="hole" data-note="A4" tabindex="0" role="button" aria-label="la">
+              <circle class="hole__halo" cx="610" cy="70" r="26"/>
+              <circle class="hole__ring" cx="610" cy="70" r="12"/>
+              <circle class="hole__in" cx="610" cy="70" r="8"/>
+              <text class="hole__label" x="610" y="118" text-anchor="middle">la</text>
+            </g>
+            <g class="hole" data-note="G4" tabindex="0" role="button" aria-label="sol">
+              <circle class="hole__halo" cx="680" cy="70" r="26"/>
+              <circle class="hole__ring" cx="680" cy="70" r="12"/>
+              <circle class="hole__in" cx="680" cy="70" r="8"/>
+              <text class="hole__label" x="680" y="118" text-anchor="middle">sol</text>
+            </g>
+            <g class="hole" data-note="F4" tabindex="0" role="button" aria-label="fa">
+              <circle class="hole__halo" cx="750" cy="70" r="26"/>
+              <circle class="hole__ring" cx="750" cy="70" r="12"/>
+              <circle class="hole__in" cx="750" cy="70" r="8"/>
+              <text class="hole__label" x="750" y="118" text-anchor="middle">fa</text>
+            </g>
+            <g class="hole hole--back" data-note="E4" tabindex="0" role="button" aria-label="mi">
+              <circle class="hole__halo" cx="330" cy="36" r="24"/>
+              <circle class="hole__ring" cx="330" cy="36" r="10"/>
+              <circle class="hole__in" cx="330" cy="36" r="6"/>
+              <text class="hole__label" x="330" y="18" text-anchor="middle">mi</text>
+            </g>
+          </g>
+        </svg>
+        <div class="ney__ui">
+          <button class="btn btn--ghost btn--sm" id="neyPlay" type="button" data-cursor="link">Écouter un souffle</button>
+          <span class="ney__hint">Survolez ou touchez les trous pour jouer une note.</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__text">
+      <h3 class="reveal">Le ney</h3>
+      <p class="reveal">Une flûte de roseau, sept trous, pas d&#39;anche. Le son ne vient que du souffle et de l&#39;angle des lèvres : il faut des mois avant qu&#39;une note sorte propre. Je joue le ney égyptien, celui des taqasim et de la musique arabe classique — en concert et lors de prestations, mariages compris — et je fabrique mes propres instruments à partir de roseau (Arundo donax) que je fais venir d&#39;Égypte et de Turquie.</p>
+      <p class="reveal">C&#39;est le même geste que coder, au fond : beaucoup de patience, beaucoup de ratés, et un jour quelque chose de juste. Les ondes que vous voyez dans l&#39;en-tête de ce site, c&#39;est ça — un souffle qui devient signal.</p>
+      <h3 class="reveal">Et aussi</h3>
+      <ul class="about__more">
+<li class="reveal">Football en compétition et course à pied.</li><li class="reveal">Montage vidéo et communication pour une association : réseaux sociaux, clips, affiches.</li><li class="reveal">Bénévolat : voyages humanitaires, maraudes, animation en EMS.</li><li class="reveal">Français et arabe égyptien bilingue, anglais C1, italien A2. Trois pays — Suisse, France, Égypte — et trois façons de dire les choses.</li>      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
+  <p class="section__eyebrow reveal">Contact</p>
+  <h2 class="reveal-words">Travaillons ensemble.</h2>
+  <p class="contact__p reveal">Je cherche une équipe où je pourrai monter vite sur des projets à impact — santé, énergie, outils du quotidien. Si vous avez un problème qui mérite un modèle et quelqu&#39;un pour le mettre en production, écrivez-moi.</p>
+  <a class="contact__mail magnetic reveal" href="mailto:maksimous.t@gmail.com" data-cursor="link" data-copy="maksimous.t@gmail.com"><span class="contact__mail-text">maksimous.t@gmail.com</span><span class="contact__mail-hint">M&#39;écrire ↗</span></a>
+  <ul class="contact__list reveal">
+    <li><a href="https://www.linkedin.com/in/thomas-maksimous" target="_blank" rel="me noopener" data-cursor="link">LinkedIn</a></li>
+    <li><a href="https://github.com/tmsmks" target="_blank" rel="me noopener" data-cursor="link">GitHub</a></li>
+    <li><a href="assets/CV_Thomas_Maksimous.pdf" target="_blank" data-cursor="link">Télécharger mon CV</a></li>
+    <li><a href="tel:+41798215626" data-cursor="link">+41 79 821 56 26</a></li>
+  </ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Site conçu et codé par Thomas, construit avec un peu d&#39;IA et beaucoup d&#39;animations.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · Tous droits réservés.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/sig/all.js" defer></script>
+<script src="assets/js/home.js" defer></script>
 </body>
 </html>

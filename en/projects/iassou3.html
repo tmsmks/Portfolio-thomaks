@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IAssou3 — Thomas Maksimous</title>
+<meta name="description" content="iOS and Android app for a 200-person conference: a chatbot that starts the conversation, AI-scored challenges, and a real-time organiser space.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#120A2A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IAssou3 — Thomas Maksimous">
+<meta property="og:description" content="iOS and Android app for a 200-person conference: a chatbot that starts the conversation, AI-scored challenges, and a real-time organiser space.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/iassou3.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500..800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#120A2A;--bg2:#1C1140;--ink:#FBF6FF;--muted:#B3A4D4;
+  --accent:#F6B73C;--accent2:#FF4D8D;--line:rgba(251,246,255,.14);
+  --display:'Syne', sans-serif;--body:'Instrument Sans', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-neon">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>02</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/iassou3.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="chat" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>April 2026 — today</span><span>Personal project for the 10th edition of a Christian conference on the theme of “Choices”. Published on the App Store and Google Play.</span></p>
+    <h1 class="phero__title" id="pTitle">IAssou3</h1>
+    <p class="phero__sub">The AI that asks the questions</p>
+    <p class="phero__tags"><i>React Native</i><i>Expo</i><i>Supabase</i><i>OpenAI</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Usually you ask the chatbot a question. Here it&#39;s the other way round. Every day the AI comes to the participant: a question on the theme, a challenge to take up, a thought to pursue — and every message ends with “But it&#39;s your choice.”</p><p class="pintro__p reveal">Two hundred people, four days, a single weekend for everything to hold together. The app had to be beautiful, reliable, and never go down during a plenary session.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Everything: product, design, mobile development, Supabase backend, prompts, store publishing, monitoring.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">React Native 0.74</li><li style="--ci:1">Expo SDK 51 · expo-router</li><li style="--ci:2">TypeScript</li><li style="--ci:3">Supabase (Auth, Postgres, Realtime, Edge Functions)</li><li style="--ci:4">OpenAI GPT-4.1-mini</li><li style="--ci:5">Groq · Llama 3.3</li><li style="--ci:6">Zustand · TanStack Query</li><li style="--ci:7">Reanimated 3</li><li style="--ci:8">EAS</li><li style="--ci:9">Sentry</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/baba-iassou3" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/baba-iassou3 ↗</a></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">An inverted chatbot</h2>
+      <p>The model produces structured JSON outputs: message type, text, options, scoring criteria. Challenges are evaluated automatically and feed a leaderboard. GPT-4.1-mini is the main engine, with a fallback to Llama 3.3 70B via Groq if the main API slows down.</p>
+<ul><li>Structured outputs validated in Edge Functions</li><li>Automatic fallback between two providers</li><li>Automatic challenge scoring</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">The organiser space</h2>
+      <p>From the app, organisers edit the programme, send targeted push notifications, publish alerts and manage content. Everything propagates in real time through Supabase Realtime subscriptions.</p>
+<ul><li>Live programme</li><li>Push notifications (Expo Push Service)</li><li>Row-level roles and permissions (RLS)</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Shipping for real</h2>
+      <p>Google and Apple sign-in, privacy policy, EAS builds for iOS and Android, over-the-air updates, Sentry to catch errors before users do. The app ran for the whole conference.</p>
+<ul><li>EAS CI/CD</li><li>Sentry monitoring</li><li>19 versioned SQL migrations</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="~200">~200</strong><span>users during the conference</span></li><li class="reveal"><strong data-count="2">2</strong><span>stores: App Store and Google Play</span></li><li class="reveal"><strong data-count="2">2</strong><span>LLM providers with automatic fallback</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="end-of-life.html" data-cursor="link" style="--nbg:#14110E;--nac:#8FB37A;--nfont:&#39;Newsreader&#39;, Georgia, serif"><small>← Previous project</small><span>End of Life</span></a>
+  <a class="pfoot__next" href="pi-26.html" data-cursor="link" style="--nbg:#070B12;--nac:#FFC53D;--nfont:&#39;Archivo&#39;, sans-serif"><small>Next project →</small><span>Hospital power outages</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

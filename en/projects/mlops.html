@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLOps pipeline — Thomas Maksimous</title>
+<meta name="description" content="Training pipeline versioned with DVC, MLflow tracking, containerised FastAPI service deployed to Google Cloud by GitHub Actions.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#0E1116">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MLOps pipeline — Thomas Maksimous">
+<meta property="og:description" content="Training pipeline versioned with DVC, MLflow tracking, containerised FastAPI service deployed to Google Cloud by GitHub Actions.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/mlops.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#0E1116;--bg2:#171B23;--ink:#EDF0F5;--muted:#8B93A3;
+  --accent:#4D7CFF;--accent2:#19C37D;--line:rgba(237,240,245,.13);
+  --display:'JetBrains Mono', ui-monospace, monospace;--body:'IBM Plex Sans', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-lab">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>08</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/mlops.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="dag" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>Autumn 2025</span><span>MLOps practical work, HES-SO.</span></p>
+    <h1 class="phero__title" id="pTitle">MLOps pipeline</h1>
+    <p class="phero__sub">From notebook to deployed service, reproducibly</p>
+    <p class="phero__tags"><i>DVC</i><i>MLflow</i><i>FastAPI</i><i>Docker</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">A model that works on my laptop is useful to no one. This project installs the discipline: versioned data, tracked experiments, a service that rebuilds itself on every commit.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Full pipeline setup, from data versioning to cloud deployment.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Python</li><li style="--ci:1">DVC</li><li style="--ci:2">MLflow</li><li style="--ci:3">FastAPI</li><li style="--ci:4">Docker</li><li style="--ci:5">GitHub Actions</li><li style="--ci:6">Google Cloud</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/mlops-guide" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/mlops-guide ↗</a></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Four stages, one graph</h2>
+      <p>prepare → train → evaluate → serve, described in dvc.yaml with their parameters. DVC only reruns what changed; data and models live on Google Cloud Storage; every training run is tracked in MLflow.</p>
+<ul><li>DVC pipeline and GCS remote</li><li>MLflow tracking</li><li>Centralised parameters (params.yaml)</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Deliver automatically</h2>
+      <p>FastAPI service containerised with Docker, a GitHub Actions workflow that reproduces the pipeline, evaluates, and deploys to Google Cloud using repository secrets.</p>
+<ul><li>Dockerfile</li><li>GitHub Actions CI/CD</li><li>Google Cloud deployment</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="4">4</strong><span>reproducible pipeline stages</span></li><li class="reveal"><strong data-count="1">1</strong><span>command to rerun everything: dvc repro</span></li><li class="reveal"><strong data-count="0">0</strong><span>manual steps between commit and deployment</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="ecotracker.html" data-cursor="link" style="--nbg:#121F14;--nac:#A5D250;--nfont:&#39;Fraunces&#39;, Georgia, serif"><small>← Previous project</small><span>EcoTracker</span></a>
+  <a class="pfoot__next" href="end-of-life.html" data-cursor="link" style="--nbg:#14110E;--nac:#8FB37A;--nfont:&#39;Newsreader&#39;, Georgia, serif"><small>Next project →</small><span>End of Life</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coupures d&#39;électricité à l&#39;hôpital — Thomas Maksimous</title>
+<meta name="description" content="Modèle de prédiction des coupures de courant hospitalières à partir de données multi-pays, météo et réseau. LightGBM, validation temporelle stricte, SHAP et interface de simulation.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#070B12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coupures d&#39;électricité à l&#39;hôpital — Thomas Maksimous">
+<meta property="og:description" content="Modèle de prédiction des coupures de courant hospitalières à partir de données multi-pays, météo et réseau. LightGBM, validation temporelle stricte, SHAP et interface de simulation.">
+<meta property="og:image" content="../assets/img/thomas.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="en" href="../en/projects/pi-26.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+:root{
+  --bg:#070B12;--bg2:#0E1623;--ink:#EEF2F7;--muted:#8A96A8;
+  --accent:#FFC53D;--accent2:#3BD0FF;--line:rgba(238,242,247,.12);
+  --display:'Archivo', sans-serif;--body:'Archivo', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-night">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>03</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../index.html#projets" data-cursor="link">Tous les projets</a>
+    <a class="nav__lang" href="../en/projects/pi-26.html" title="Read in English">EN</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="grid" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>Mars — juin 2026</span><span>Projet d&#39;intégration HES-SO, master Data Science.</span></p>
+    <h1 class="phero__title" id="pTitle">Coupures d&#39;électricité à l&#39;hôpital</h1>
+    <p class="phero__sub">Prédire la panne avant qu&#39;elle n&#39;éteigne le bloc</p>
+    <p class="phero__tags"><i>LightGBM</i><i>SHAP</i><i>Pandas</i><i>Streamlit</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Défiler"><span>Défiler</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Dans un hôpital ougandais, une coupure de courant n&#39;est pas un désagrément : c&#39;est un respirateur qui s&#39;arrête. L&#39;hôpital Lacor enregistre sa consommation toutes les quinze minutes depuis des années ; personne n&#39;avait encore essayé de lire dans ces données le moment de la prochaine panne.</p><p class="pintro__p reveal">L&#39;objectif : estimer la probabilité d&#39;une coupure dans l&#39;heure, dans trois heures, dans six heures — et expliquer pourquoi.</p>  </div>
+  <aside class="pside reveal">
+    <h2>Mon rôle</h2>
+    <p>Pipeline de données, feature engineering, entraînement et comparaison des modèles, interprétabilité, application Streamlit.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Python</li><li style="--ci:1">Pandas</li><li style="--ci:2">LightGBM</li><li style="--ci:3">XGBoost</li><li style="--ci:4">Scikit-learn</li><li style="--ci:5">SHAP</li><li style="--ci:6">Streamlit</li><li style="--ci:7">Open-Meteo</li><li style="--ci:8">Electricity Maps API</li></ul>
+    <h2>Liens</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/PI_26" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/PI_26 ↗</a></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Des données qui ne parlent pas la même langue</h2>
+      <p>Consommation de Lacor (Ouganda), profils horaires de dix hôpitaux du NHS (Royaume-Uni) et de cinq bâtiments de New York (LL84), météo historique Open-Meteo, coupures réseau EAGLE-I par comté, charge et mix du réseau via Electricity Maps. Tout est rééchantillonné à l&#39;heure et fusionné dans un dataset multi-sites.</p>
+<ul><li>Huit scripts d&#39;ingestion, un par source</li><li>Rééchantillonnage et alignement temporel</li><li>Cible : is_outage, fortement déséquilibrée</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Ne pas se mentir sur la validation</h2>
+      <p>Avec des séries temporelles, un split aléatoire donne des scores magnifiques et faux. J&#39;ai imposé TimeSeriesSplit en validation croisée, un hold-out chronologique et un backtest walk-forward à origine glissante. Random Forest, XGBoost et LightGBM comparés dans ces conditions : LightGBM l&#39;emporte, avec un F1 de 0,763 en validation temporelle stricte.</p>
+<ul><li>Features temporelles, météo et de charge réseau</li><li>GridSearchCV + TimeSeriesSplit</li><li>Calibration adaptative (isotonique / sigmoïde / aucune) selon le score de Brier</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Expliquer, puis simuler</h2>
+      <p>Les valeurs SHAP montrent ce qui fait monter le risque : la charge des dernières heures, la température, l&#39;heure de la journée. Une application Streamlit permet de jouer avec ces variables, d&#39;entrer des coordonnées GPS pour récupérer la zone réseau, et de lire le risque pour les horizons 1 h, 3 h et 6 h.</p>
+<ul><li>TreeExplainer SHAP, importance globale et locale</li><li>Modèles par horizon de prévision</li><li>Interface de simulation Streamlit</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">Ce que ça a donné</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="0,763">0,763</strong><span>F1 de LightGBM en validation temporelle stricte</span></li><li class="reveal"><strong data-count="3">3</strong><span>horizons de prévision : 1 h, 3 h, 6 h</span></li><li class="reveal"><strong data-count="16">16</strong><span>sites hospitaliers dans trois pays</span></li><li class="reveal"><strong data-count="≈ 0,96">≈ 0,96</strong><span>ROC AUC en backtest walk-forward</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="Tous les projets">
+  <a class="pfoot__prev" href="iassou3.html" data-cursor="link" style="--nbg:#120A2A;--nac:#F6B73C;--nfont:&#39;Syne&#39;, sans-serif"><small>← Projet précédent</small><span>IAssou3</span></a>
+  <a class="pfoot__next" href="dsm-gestion.html" data-cursor="link" style="--nbg:#0B1F4D;--nac:#F28C28;--nfont:&#39;Barlow Condensed&#39;, sans-serif"><small>Projet suivant →</small><span>DSM Gestion</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Site conçu et codé par Thomas, construit avec un peu d&#39;IA et beaucoup d&#39;animations.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · Tous droits réservés.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/sig/all.js" defer></script>
+<script src="../assets/js/project.js" defer></script>
+</body>
+</html>

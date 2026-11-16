@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoTracker — Thomas Maksimous</title>
+<meta name="description" content="Application collaborative d&#39;observation des espèces : collecte via API, base MongoDB, carte interactive, déploiement. Projet de fin de bachelor en équipe pluridisciplinaire.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#121F14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EcoTracker — Thomas Maksimous">
+<meta property="og:description" content="Application collaborative d&#39;observation des espèces : collecte via API, base MongoDB, carte interactive, déploiement. Projet de fin de bachelor en équipe pluridisciplinaire.">
+<meta property="og:image" content="../assets/img/thomas.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="alternate" hreflang="en" href="../en/projects/ecotracker.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400..700;1,6..12,400..700&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+:root{
+  --bg:#121F14;--bg2:#1B2D1E;--ink:#EFF3E4;--muted:#A3B493;
+  --accent:#A5D250;--accent2:#D2A05F;--line:rgba(239,243,228,.14);
+  --display:'Fraunces', Georgia, serif;--body:'Nunito Sans', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-forest">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>07</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../index.html#projets" data-cursor="link">Tous les projets</a>
+    <a class="nav__lang" href="../en/projects/ecotracker.html" title="Read in English">EN</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="leaves" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>2024 — 2025</span><span>Projet SAE 501, Université Paris-Est Créteil. Équipe de développeurs et designers.</span></p>
+    <h1 class="phero__title" id="pTitle">EcoTracker</h1>
+    <p class="phero__sub">Une naturothèque pour la biodiversité</p>
+    <p class="phero__tags"><i>MongoDB</i><i>API REST</i><i>Python</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Défiler"><span>Défiler</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">Une naturothèque : une bibliothèque du vivant, où chacun ajoute ce qu&#39;il observe. EcoTracker collecte des observations d&#39;espèces, les nettoie, les stocke et les montre sur une carte des espaces naturels.</p>  </div>
+  <aside class="pside reveal">
+    <h2>Mon rôle</h2>
+    <p>Données et backend : collecte d&#39;observations via API, modélisation MongoDB, nettoyage, cartographie ; contribution au cahier des charges et au pilotage (Jira, Notion, Gantt).</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Python</li><li style="--ci:1">MongoDB</li><li style="--ci:2">API REST</li><li style="--ci:3">JavaScript</li><li style="--ci:4">Jira · Notion</li></ul>
+    <h2>Liens</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/INFO1SAE/SAE501_S2" target="_blank" rel="noopener" data-cursor="link">github.com/INFO1SAE/SAE501_S2 ↗</a><span class="pside__private">Dépôt privé — code sur demande</span></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Des données hétérogènes</h2>
+      <p>Observations issues d&#39;API externes, de fichiers CSV et JSON, de saisies utilisateurs. Un pipeline de nettoyage et de transformation avant stockage dans MongoDB, puis une carte interactive des espaces et des espèces observées.</p>
+<ul><li>Collecte via API REST</li><li>Base MongoDB</li><li>Carte interactive</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Un projet mené comme en entreprise</h2>
+      <p>Cahier des charges, sprints planifiés avec un diagramme de Gantt, suivi dans Jira et Notion, poster d&#39;architecture, déploiement et logs. C&#39;est le projet qui m&#39;a donné le goût de tenir toute la chaîne, de l&#39;analyse du besoin à la mise en ligne.</p>
+<ul><li>Méthode agile, sprints</li><li>Déploiement de l&#39;application</li><li>Équipe pluridisciplinaire</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">Ce que ça a donné</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="1">1</strong><span>application déployée</span></li><li class="reveal"><strong data-count="3">3</strong><span>formats de données réconciliés : API, CSV, JSON</span></li><li class="reveal"><strong data-count="1">1</strong><span>équipe de développeurs et designers</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="Tous les projets">
+  <a class="pfoot__prev" href="objectif-prime.html" data-cursor="link" style="--nbg:#0B1F17;--nac:#3DDC84;--nfont:&#39;Outfit&#39;, sans-serif"><small>← Projet précédent</small><span>Objectif Prime</span></a>
+  <a class="pfoot__next" href="mlops.html" data-cursor="link" style="--nbg:#0E1116;--nac:#4D7CFF;--nfont:&#39;JetBrains Mono&#39;, ui-monospace, monospace"><small>Projet suivant →</small><span>Pipeline MLOps</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Site conçu et codé par Thomas, construit avec un peu d&#39;IA et beaucoup d&#39;animations.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · Tous droits réservés.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/sig/all.js" defer></script>
+<script src="../assets/js/project.js" defer></script>
+</body>
+</html>

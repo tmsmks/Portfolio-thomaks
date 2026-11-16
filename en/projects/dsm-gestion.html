@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSM Gestion — Thomas Maksimous</title>
+<meta name="description" content="Quote and invoice software for a construction company, with an AI assistant you can talk to, write to or send a photo. Nothing leaves without human approval.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#0B1F4D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DSM Gestion — Thomas Maksimous">
+<meta property="og:description" content="Quote and invoice software for a construction company, with an AI assistant you can talk to, write to or send a photo. Nothing leaves without human approval.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/dsm-gestion.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#0B1F4D;--bg2:#122C66;--ink:#F6F8FC;--muted:#A9BBE0;
+  --accent:#F28C28;--accent2:#FFFFFF;--line:rgba(246,248,252,.18);
+  --display:'Barlow Condensed', sans-serif;--body:'Barlow', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-blueprint">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>04</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/dsm-gestion.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="invoice" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>2026</span><span>Built for D.S.M. Bâtiment, my father&#39;s company. Designed to generalise to any small business.</span></p>
+    <h1 class="phero__title" id="pTitle">DSM Gestion</h1>
+    <p class="phero__sub">Dictate the quote, the AI lays it out, the manager approves</p>
+    <p class="phero__tags"><i>Next.js</i><i>PostgreSQL</i><i>Claude</i><i>Ollama</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">A construction business owner spends his evenings retyping quotes. He knows exactly what he wants to invoice — he says it out loud in his van — but between the dictation and the PDF there&#39;s Word, a calculator and an hour lost.</p><p class="pintro__p reveal">DSM Gestion listens. You dictate, type, send an email screenshot or a photo of a scribbled quote: the assistant prepares the document in the company&#39;s usual layout. Then the manager reviews, corrects and approves. Never the other way round.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Product, architecture, full development, business rules and invoicing compliance.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Next.js 16</li><li style="--ci:1">TypeScript</li><li style="--ci:2">Drizzle ORM</li><li style="--ci:3">PostgreSQL / PGlite / Supabase</li><li style="--ci:4">Anthropic SDK · Zod</li><li style="--ci:5">Ollama</li><li style="--ci:6">@react-pdf/renderer</li><li style="--ci:7">nodemailer</li><li style="--ci:8">iron-session</li><li style="--ci:9">Vitest</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/dsm-gestion" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/dsm-gestion ↗</a><span class="pside__private">Private repository — code on request</span></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">AI proposes, a human decides</h2>
+      <p>The assistant runs locally with Ollama (free, no data leaves the computer) or with Claude through the Anthropic API, with structured output validated by a Zod schema. It never invents a price: a line without an amount is flagged, with a suggestion from history if needed. It lists the points to check and shows “before → after” changes. Totals are computed by code, never by the model.</p>
+<ul><li>Inputs: text, voice dictation, screenshots, photos, PDFs</li><li>Swappable AI provider: local Ollama or Claude</li><li>Proposal → review → apply, all logged</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Compliance as a database</h2>
+      <p>Continuous numbering in the company&#39;s format, assigned inside a transaction. An issued invoice is frozen: the app and PostgreSQL triggers refuse any modification; corrections go through credit notes. Every PDF is kept with its SHA-256 fingerprint. Mandatory mentions — ten-year liability, reduced VAT, waste (AGEC law), withdrawal, mediator, penalties — are added automatically depending on the client.</p>
+<ul><li>Amounts in cents, totals computed server-side</li><li>Locking by SQL triggers</li><li>Full audit log: who, what, when, by hand or by AI</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">03</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">From quote to payment, in one place</h2>
+      <p>Quote → invoice in one click with deposits deducted, payments received and automatic “paid” status, credit notes, dashboard (to approve, pending, outstanding), Gmail sending with the PDF after confirmation. Installable as an app on desktop and phone, with one account per person: manager, back office, helper.</p>
+<ul><li>Vector PDFs modelled on the original invoices (@react-pdf/renderer)</li><li>PWA, local mode with embedded PostgreSQL</li><li>Vitest tests on a reset database</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="0">0</strong><span>prices invented by the AI, by construction</span></li><li class="reveal"><strong data-count="100%">100%</strong><span>of documents approved by a human</span></li><li class="reveal"><strong data-count="1">1</strong><span>place for quotes, invoices, credit notes, payments and sending</span></li><li class="reveal"><strong data-count="2">2</strong><span>AI modes: free local or cloud</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="pi-26.html" data-cursor="link" style="--nbg:#070B12;--nac:#FFC53D;--nfont:&#39;Archivo&#39;, sans-serif"><small>← Previous project</small><span>Hospital power outages</span></a>
+  <a class="pfoot__next" href="triply.html" data-cursor="link" style="--nbg:#07262B;--nac:#F26B5B;--nfont:&#39;DM Serif Display&#39;, Georgia, serif"><small>Next project →</small><span>Triply</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>

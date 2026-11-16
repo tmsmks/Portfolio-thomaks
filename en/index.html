@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Maksimous — junior AI Engineer &amp; Data Scientist</title>
+<meta name="description" content="Portfolio of Thomas Maksimous, Master&#39;s student in Data Science at HES-SO Lausanne. AI, machine learning and applications shipped to production. Looking for a permanent position from March 2027.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#070A12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thomas Maksimous — junior AI Engineer &amp; Data Scientist">
+<meta property="og:description" content="Portfolio of Thomas Maksimous, Master&#39;s student in Data Science at HES-SO Lausanne. AI, machine learning and applications shipped to production. Looking for a permanent position from March 2027.">
+<meta property="og:image" content="../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../index.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500..800&amp;family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;1,500&family=Syne:wght@800&family=Archivo:wdth,wght@110,800&family=Barlow+Condensed:wght@800&family=DM+Serif+Display&family=Outfit:wght@700&family=Fraunces:wght@600&family=JetBrains+Mono:wght@700&display=swap">
+</head>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <p class="loader__name"><span>T</span><span>h</span><span>o</span><span>m</span><span>a</span><span>s</span><span class="loader__sp"> </span><span>M</span><span>a</span><span>k</span><span>s</span><span>i</span><span>m</span><span>o</span><span>u</span><span>s</span></p>
+    <p class="loader__count"><span id="loaderCount">00</span></p>
+    <p class="loader__bar"><span id="loaderBar"></span></p>
+  </div>
+</div>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="nav" id="top">
+  <a class="nav__brand" href="#top" aria-label="Thomas Maksimous"><span class="nav__mono">TM</span><span class="nav__name">Thomas Maksimous</span></a>
+  <nav class="nav__links" aria-label="Menu">
+    <a href="#projets" data-cursor="link">Projects</a>
+    <a href="#parcours" data-cursor="link">Path</a>
+    <a href="#competences" data-cursor="link">Skills</a>
+    <a href="#moi" data-cursor="link">Me</a>
+    <a href="#contact" data-cursor="link">Contact</a>
+  </nav>
+  <div class="nav__tools">
+    <a class="nav__lang" href="../index.html" title="Lire en français" hreflang="fr">FR</a>
+    <a class="btn btn--ghost btn--sm nav__cv" href="../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a>
+  </div>
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#projets">Projects</a>
+  <a href="#parcours">Path</a>
+  <a href="#competences">Skills</a>
+  <a href="#moi">Me</a>
+  <a href="#contact">Contact</a>
+  <a href="../index.html" class="mnav__lang">FR</a>
+</div>
+<main id="main">
+<section class="hero">
+  <canvas class="hero__breath" id="breath" aria-hidden="true"></canvas>
+  <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+  <div class="hero__grid">
+    <div class="hero__text">
+      <p class="hero__kicker"><span class="hero__kicker-dot"></span>Portfolio 2026 — Lausanne (VD), Switzerland</p>
+      <h1 class="hero__title" id="heroTitle">
+        <span class="hero__line"><span class="hero__w">I build AI systems</span></span>
+        <span class="hero__line"><span class="hero__w hero__w--accent">that serve</span></span>
+        <span class="hero__line"><span class="hero__w">real people.</span></span>
+      </h1>
+      <p class="hero__lead">Master&#39;s student in Data Science at HES-SO Lausanne. I start from a concrete need — a hospital, a conference, a construction company — and go all the way to production.</p>
+      <p class="hero__status"><span class="pulse" aria-hidden="true"></span>Looking for a permanent junior AI Engineer / Data Scientist role — available from March 2027</p>
+      <div class="hero__cta">
+        <a class="btn btn--copper magnetic" href="#projets" data-cursor="link">See my projects</a>
+        <a class="btn btn--ghost magnetic" href="../assets/CV_Thomas_Maksimous.pdf" target="_blank" data-cursor="link">My CV</a>
+      </div>
+    </div>
+    <figure class="hero__photo" id="heroPhoto">
+      <div class="hero__frame">
+        <picture>
+          <source srcset="../assets/img/thomas.webp" type="image/webp">
+          <img src="../assets/img/thomas.jpg" alt="Thomas Maksimous" width="900" height="1125" loading="eager" fetchpriority="high">
+        </picture>
+      </div>
+      <span class="hero__badge hero__badge--a"><b>HES-SO</b>Master Data Science</span>
+      <span class="hero__badge hero__badge--b"><b>8</b>projects</span>
+      <span class="hero__badge hero__badge--c"><b>2</b>years of work-study</span>
+      <figcaption>Thomas Maksimous · Lausanne</figcaption>
+    </figure>
+  </div>
+  <a class="hero__scroll" href="#manifeste" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+<span>Machine Learning</span><i>✦</i><span>LLM &amp; RAG</span><i>✦</i><span>Python</span><i>✦</i><span>Next.js</span><i>✦</i><span>React Native</span><i>✦</i><span>Flutter</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Supabase</span><i>✦</i><span>LightGBM</span><i>✦</i><span>SHAP</span><i>✦</i><span>Ollama</span><i>✦</i><span>Docker</span><i>✦</i><span>ETL</span><i>✦</i><span>Power BI</span><i>✦</i><span>Streamlit</span><i>✦</i><span>Flask</span><i>✦</i>  </div>
+</div>
+
+<section class="manifesto" id="manifeste">
+  <div class="manifesto__sticky">
+    <h2 class="manifesto__title reveal-words">Understand, build, ship.</h2>
+    <p class="manifesto__sub reveal">Three reflexes I picked up during my work-study years and keep on every project.</p>
+  </div>
+  <ol class="manifesto__list">
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">01</span>
+      <h3>Start from the business</h3>
+      <p>Two years of work-study taught me to listen first: what a small company&#39;s back office actually does, what a caregiver expects, what a director looks at in a dashboard.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">02</span>
+      <h3>Build end to end</h3>
+      <p>Data, model, API, interface, deployment. I like owning the whole chain and watching an idea become a tool somebody opens every morning.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+    <li class="manifesto__item tilt reveal">
+      <span class="manifesto__n" aria-hidden="true">03</span>
+      <h3>Learn by doing</h3>
+      <p>Every project is an excuse for a technology I didn&#39;t know the day before: Flutter, Expo, LightGBM, Ollama, DVC. I read, I break it, I start again.</p>
+      <span class="manifesto__shine" aria-hidden="true"></span>
+    </li>
+  </ol>
+</section>
+
+<section class="projects" id="projets">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Projects · 08</p>
+    <h2 class="reveal-words">Projects</h2>
+    <p class="section__lead reveal">Eight projects, eight worlds. Each page has its own style — just as each project had its own problem.</p>
+  </header>
+  <div class="stack" id="stack">
+    <article class="card mood-paper" data-sig="graph" style="--pbg:#14110E;--pbg2:#1E1915;--pink:#F3EBDD;--pac:#8FB37A;--pac2:#D9636F;--pfont:&#39;Newsreader&#39;, Georgia, serif;--pmuted:#A89C8A;--i:0">
+      <a class="card__link" href="projects/end-of-life.html" data-cursor="view" aria-label="View project — End of Life">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">01</span><span class="card__period">February 2026 — February 2027</span></p>
+          <h3 class="card__title">End of Life</h3>
+          <p class="card__sub">A book whose reader is the caregiver</p>
+          <p class="card__short">LLM-driven narrative serious game to train future caregivers in palliative-care soft skills. Master&#39;s thesis with CHUV and UNIL.</p>
+          <p class="card__tags"><i>Python</i><i>Flask</i><i>OpenAI</i><i>Ollama</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-neon" data-sig="chat" style="--pbg:#120A2A;--pbg2:#1C1140;--pink:#FBF6FF;--pac:#F6B73C;--pac2:#FF4D8D;--pfont:&#39;Syne&#39;, sans-serif;--pmuted:#B3A4D4;--i:1">
+      <a class="card__link" href="projects/iassou3.html" data-cursor="view" aria-label="View project — IAssou3">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">02</span><span class="card__period">April 2026 — today</span></p>
+          <h3 class="card__title">IAssou3</h3>
+          <p class="card__sub">The AI that asks the questions</p>
+          <p class="card__short">iOS and Android app for a 200-person conference: a chatbot that starts the conversation, AI-scored challenges, and a real-time organiser space.</p>
+          <p class="card__tags"><i>React Native</i><i>Expo</i><i>Supabase</i><i>OpenAI</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-night" data-sig="grid" style="--pbg:#070B12;--pbg2:#0E1623;--pink:#EEF2F7;--pac:#FFC53D;--pac2:#3BD0FF;--pfont:&#39;Archivo&#39;, sans-serif;--pmuted:#8A96A8;--i:2">
+      <a class="card__link" href="projects/pi-26.html" data-cursor="view" aria-label="View project — Hospital power outages">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">03</span><span class="card__period">March — June 2026</span></p>
+          <h3 class="card__title">Hospital power outages</h3>
+          <p class="card__sub">Predict the outage before it switches off the OR</p>
+          <p class="card__short">Prediction model for hospital power outages from multi-country, weather and grid data. LightGBM, strict temporal validation, SHAP and a simulation interface.</p>
+          <p class="card__tags"><i>LightGBM</i><i>SHAP</i><i>Pandas</i><i>Streamlit</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-blueprint" data-sig="invoice" style="--pbg:#0B1F4D;--pbg2:#122C66;--pink:#F6F8FC;--pac:#F28C28;--pac2:#FFFFFF;--pfont:&#39;Barlow Condensed&#39;, sans-serif;--pmuted:#A9BBE0;--i:3">
+      <a class="card__link" href="projects/dsm-gestion.html" data-cursor="view" aria-label="View project — DSM Gestion">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">04</span><span class="card__period">2026</span></p>
+          <h3 class="card__title">DSM Gestion</h3>
+          <p class="card__sub">Dictate the quote, the AI lays it out, the manager approves</p>
+          <p class="card__short">Quote and invoice software for a construction company, with an AI assistant you can talk to, write to or send a photo. Nothing leaves without human approval.</p>
+          <p class="card__tags"><i>Next.js</i><i>PostgreSQL</i><i>Claude</i><i>Ollama</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-sand" data-sig="map" style="--pbg:#07262B;--pbg2:#0D353B;--pink:#F4EAD2;--pac:#F26B5B;--pac2:#5CC8C2;--pfont:&#39;DM Serif Display&#39;, Georgia, serif;--pmuted:#9DB7B5;--i:4">
+      <a class="card__link" href="projects/triply.html" data-cursor="view" aria-label="View project — Triply">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">05</span><span class="card__period">Autumn 2025</span></p>
+          <h3 class="card__title">Triply</h3>
+          <p class="card__sub">Dream it. Plan it. Live it.</p>
+          <p class="card__short">Flutter mobile app to organise a trip as a group: itinerary, budget, checklist, documents and photo album shared in real time.</p>
+          <p class="card__tags"><i>Flutter</i><i>Firebase</i><i>Google Maps</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-fresh" data-sig="curve" style="--pbg:#0B1F17;--pbg2:#122C21;--pink:#EEF8F1;--pac:#3DDC84;--pac2:#FF8A3D;--pfont:&#39;Outfit&#39;, sans-serif;--pmuted:#8FB09F;--i:5">
+      <a class="card__link" href="projects/objectif-prime.html" data-cursor="view" aria-label="View project — Objectif Prime">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">06</span><span class="card__period">Spring 2026</span></p>
+          <h3 class="card__title">Objectif Prime</h3>
+          <p class="card__sub">Lose weight, but with friends</p>
+          <p class="card__short">Web and mobile weight-loss tracker with private groups and a leaderboard between friends. Next.js, Supabase, Open Food Facts.</p>
+          <p class="card__tags"><i>Next.js</i><i>Supabase</i><i>Tailwind</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-forest" data-sig="leaves" style="--pbg:#121F14;--pbg2:#1B2D1E;--pink:#EFF3E4;--pac:#A5D250;--pac2:#D2A05F;--pfont:&#39;Fraunces&#39;, Georgia, serif;--pmuted:#A3B493;--i:6">
+      <a class="card__link" href="projects/ecotracker.html" data-cursor="view" aria-label="View project — EcoTracker">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">07</span><span class="card__period">2024 — 2025</span></p>
+          <h3 class="card__title">EcoTracker</h3>
+          <p class="card__sub">A nature library for biodiversity</p>
+          <p class="card__short">Collaborative species-observation app: API collection, MongoDB database, interactive map, deployment. Final bachelor&#39;s project in a multidisciplinary team.</p>
+          <p class="card__tags"><i>MongoDB</i><i>API REST</i><i>Python</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+    <article class="card mood-lab" data-sig="dag" style="--pbg:#0E1116;--pbg2:#171B23;--pink:#EDF0F5;--pac:#4D7CFF;--pac2:#19C37D;--pfont:&#39;JetBrains Mono&#39;, ui-monospace, monospace;--pmuted:#8B93A3;--i:7">
+      <a class="card__link" href="projects/mlops.html" data-cursor="view" aria-label="View project — MLOps pipeline">
+        <div class="card__visual"><canvas class="card__sig"></canvas></div>
+        <div class="card__body">
+          <p class="card__meta"><span class="card__idx">08</span><span class="card__period">Autumn 2025</span></p>
+          <h3 class="card__title">MLOps pipeline</h3>
+          <p class="card__sub">From notebook to deployed service, reproducibly</p>
+          <p class="card__short">Training pipeline versioned with DVC, MLflow tracking, containerised FastAPI service deployed to Google Cloud by GitHub Actions.</p>
+          <p class="card__tags"><i>DVC</i><i>MLflow</i><i>FastAPI</i><i>Docker</i></p>
+          <span class="card__go"><span>View project</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+    </article>
+  </div>
+</section>
+
+<section class="path" id="parcours">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Path</p>
+    <h2 class="reveal-words">Path</h2>
+    <p class="section__lead reveal">From a CRM database to AI prediction, by way of 100 million rows.</p>
+  </header>
+  <ol class="tl">
+    <span class="tl__rail" aria-hidden="true"><span class="tl__progress"></span></span>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2026 — 2027</time>
+      <div class="tl__body">
+        <h3>Master&#39;s thesis — serious game &amp; AI for training caregivers</h3>
+        <p class="tl__where">CHUV · UNIL · HES-SO, Lausanne</p>
+        <p>LLM-driven narrative serious game to train future caregivers in soft skills. Cloud / local LLM switch for health data, scoring of 7 relational skills (expert agreement ICC = 0.90), a 1,100+ choice scenario generated by AI and validated by experts.</p>
+        <p class="tl__tags"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>OpenAI</span><span>Ollama</span><a class="tl__link" href="projects/end-of-life.html" data-cursor="link">View project →</a></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2025 — 2027</time>
+      <div class="tl__body">
+        <h3>Master of Engineering — Data Science</h3>
+        <p class="tl__where">HES-SO, Lausanne</p>
+        <p>Machine learning, deep learning, NLP (LLM &amp; RAG), statistics, predictive modelling, MLOps, advanced mobile applications.</p>
+        <p class="tl__tags"><span>ML</span><span>Deep Learning</span><span>NLP</span><span>MLOps</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2024 — 2025</time>
+      <div class="tl__body">
+        <h3>Data Analyst &amp; data automation — work-study</h3>
+        <p class="tl__where">WAAT, Malakoff (Paris)</p>
+        <p>EV charging stations. Python ETL pipelines over ~100M rows from 3 REST APIs (Monta, Zendesk, Selsy), automated data-quality rules, ~30 Power BI / ClicData dashboards for key accounts (DPD, PSG, Proudreed…), SQL optimisation, reporting to management, mentoring two interns.</p>
+        <p class="tl__tags"><span>Python</span><span>SQL</span><span>ETL</span><span>Power BI</span><span>ClicData</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2023 — 2024</time>
+      <div class="tl__body">
+        <h3>Salesforce administrator &amp; automation — work-study</h3>
+        <p class="tl__where">CFA SACEF, Paris</p>
+        <p>Lead CRM administrator for a training organisation: requirements gathering, ~15 automated business processes (Salesforce, Power Automate), customer portal in Apex / HTML / CSS, DocuSign, Gonexa and SurveyMonkey integrations.</p>
+        <p class="tl__tags"><span>Salesforce</span><span>Apex</span><span>Power Automate</span><span>SQL</span></p>
+      </div>
+    </li>
+    <li class="tl__item reveal">
+      <span class="tl__dot" aria-hidden="true"></span>
+      <time class="tl__when">2022 — 2025</time>
+      <div class="tl__body">
+        <h3>Bachelor in Computer Science — data administration and exploitation</h3>
+        <p class="tl__where">Université Paris-Est Créteil</p>
+        <p>Databases, web development, agile project management. Final-year project EcoTracker: a collaborative nature library for biodiversity.</p>
+        <p class="tl__tags"><span>Databases</span><span>Web</span><span>Agile</span><a class="tl__link" href="projects/ecotracker.html" data-cursor="link">View project →</a></p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="skills" id="competences">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Skills</p>
+    <h2 class="reveal-words">Skills</h2>
+    <p class="section__lead reveal">What I use day to day, in order of affection.</p>
+  </header>
+  <div class="skills__grid">
+    <div class="skills__group reveal" style="--gi:0">
+      <h3><span class="skills__n">01</span>AI &amp; LLM</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">OpenAI API</li><li class="chip" style="--ci:1">Llama / Ollama</li><li class="chip" style="--ci:2">Anthropic Claude</li><li class="chip" style="--ci:3">Gemini</li><li class="chip" style="--ci:4">RAG</li><li class="chip" style="--ci:5">NLP</li><li class="chip" style="--ci:6">Prompt engineering</li><li class="chip" style="--ci:7">Structured JSON outputs</li><li class="chip" style="--ci:8">Local LLMs</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:1">
+      <h3><span class="skills__n">02</span>Machine learning</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Scikit-learn</li><li class="chip" style="--ci:1">LightGBM</li><li class="chip" style="--ci:2">XGBoost</li><li class="chip" style="--ci:3">PyTorch</li><li class="chip" style="--ci:4">TensorFlow</li><li class="chip" style="--ci:5">SHAP</li><li class="chip" style="--ci:6">Feature engineering</li><li class="chip" style="--ci:7">Time-series validation</li><li class="chip" style="--ci:8">Calibration</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:2">
+      <h3><span class="skills__n">03</span>Data</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Python / Pandas</li><li class="chip" style="--ci:1">SQL (PostgreSQL, MySQL, SQLite)</li><li class="chip" style="--ci:2">MongoDB</li><li class="chip" style="--ci:3">ETL / pipelines</li><li class="chip" style="--ci:4">Data quality</li><li class="chip" style="--ci:5">Power BI</li><li class="chip" style="--ci:6">ClicData</li><li class="chip" style="--ci:7">DVC</li><li class="chip" style="--ci:8">MLflow</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:3">
+      <h3><span class="skills__n">04</span>Development &amp; deployment</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Flask</li><li class="chip" style="--ci:1">Streamlit</li><li class="chip" style="--ci:2">Next.js / TypeScript</li><li class="chip" style="--ci:3">React Native / Expo</li><li class="chip" style="--ci:4">Flutter</li><li class="chip" style="--ci:5">Supabase</li><li class="chip" style="--ci:6">Firebase</li><li class="chip" style="--ci:7">Docker</li><li class="chip" style="--ci:8">Git / GitHub Actions</li><li class="chip" style="--ci:9">pytest</li><li class="chip" style="--ci:10">Sentry</li><li class="chip" style="--ci:11">Render / Vercel / EAS</li></ul>
+    </div>
+    <div class="skills__group reveal" style="--gi:4">
+      <h3><span class="skills__n">05</span>Other</h3>
+      <ul class="chips"><li class="chip" style="--ci:0">Java</li><li class="chip" style="--ci:1">JavaScript</li><li class="chip" style="--ci:2">Salesforce (Admin, Apex)</li><li class="chip" style="--ci:3">Power Automate</li><li class="chip" style="--ci:4">Jira / Notion</li><li class="chip" style="--ci:5">Agile / Scrum</li></ul>
+    </div>
+    <div class="skills__group skills__group--lang reveal">
+      <h3><span class="skills__n">06</span>Languages</h3>
+      <ul class="langs"><li><span>French</span><em>C2 · native</em></li><li><span>Egyptian Arabic</span><em>C2 · native</em></li><li><span>English</span><em>C1</em></li><li><span>Italian</span><em>A2</em></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="moi">
+  <header class="section__head">
+    <p class="section__eyebrow reveal">Me</p>
+    <h2 class="reveal-words">Between two commits</h2>
+  </header>
+  <div class="about__grid">
+    <div class="about__ney reveal">
+      <div class="ney" id="ney">
+        <canvas class="ney__breath" id="neyBreath" aria-hidden="true"></canvas>
+        <svg class="ney__svg" viewBox="0 0 900 140" aria-label="The ney" role="img">
+          <defs>
+            <linearGradient id="reed" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E7C994"/><stop offset=".45" stop-color="#C9A063"/><stop offset="1" stop-color="#8A6232"/>
+            </linearGradient>
+            <linearGradient id="reedShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <g class="ney__body">
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reed)"/>
+            <rect x="60" y="52" width="800" height="36" rx="4" fill="url(#reedShade)"/>
+            <!-- nœuds du roseau -->
+<rect x="150" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="250" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="352" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="452" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="552" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="652" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/><rect x="752" y="50" width="6" height="40" rx="2" fill="#6B4A22" opacity=".55"/>            <!-- embouchure -->
+            <ellipse cx="60" cy="70" rx="7" ry="18" fill="#3A2810"/>
+            <ellipse cx="60" cy="70" rx="4" ry="12" fill="#120B04"/>
+            <rect x="840" y="48" width="22" height="44" rx="4" fill="#8A6232"/>
+            <ellipse cx="862" cy="70" rx="5" ry="18" fill="#2A1C0C"/>
+          </g>
+          <!-- trous : 6 devant + 1 derrière -->
+          <g class="ney__holes">
+            <g class="hole" data-note="D5" tabindex="0" role="button" aria-label="ré">
+              <circle class="hole__halo" cx="400" cy="70" r="26"/>
+              <circle class="hole__ring" cx="400" cy="70" r="12"/>
+              <circle class="hole__in" cx="400" cy="70" r="8"/>
+              <text class="hole__label" x="400" y="118" text-anchor="middle">ré</text>
+            </g>
+            <g class="hole" data-note="C5" tabindex="0" role="button" aria-label="do">
+              <circle class="hole__halo" cx="470" cy="70" r="26"/>
+              <circle class="hole__ring" cx="470" cy="70" r="12"/>
+              <circle class="hole__in" cx="470" cy="70" r="8"/>
+              <text class="hole__label" x="470" y="118" text-anchor="middle">do</text>
+            </g>
+            <g class="hole" data-note="Bb4" tabindex="0" role="button" aria-label="si♭">
+              <circle class="hole__halo" cx="540" cy="70" r="26"/>
+              <circle class="hole__ring" cx="540" cy="70" r="12"/>
+              <circle class="hole__in" cx="540" cy="70" r="8"/>
+              <text class="hole__label" x="540" y="118" text-anchor="middle">si♭</text>
+            </g>
+            <g class="hole" data-note="A4" tabindex="0" role="button" aria-label="la">
+              <circle class="hole__halo" cx="610" cy="70" r="26"/>
+              <circle class="hole__ring" cx="610" cy="70" r="12"/>
+              <circle class="hole__in" cx="610" cy="70" r="8"/>
+              <text class="hole__label" x="610" y="118" text-anchor="middle">la</text>
+            </g>
+            <g class="hole" data-note="G4" tabindex="0" role="button" aria-label="sol">
+              <circle class="hole__halo" cx="680" cy="70" r="26"/>
+              <circle class="hole__ring" cx="680" cy="70" r="12"/>
+              <circle class="hole__in" cx="680" cy="70" r="8"/>
+              <text class="hole__label" x="680" y="118" text-anchor="middle">sol</text>
+            </g>
+            <g class="hole" data-note="F4" tabindex="0" role="button" aria-label="fa">
+              <circle class="hole__halo" cx="750" cy="70" r="26"/>
+              <circle class="hole__ring" cx="750" cy="70" r="12"/>
+              <circle class="hole__in" cx="750" cy="70" r="8"/>
+              <text class="hole__label" x="750" y="118" text-anchor="middle">fa</text>
+            </g>
+            <g class="hole hole--back" data-note="E4" tabindex="0" role="button" aria-label="mi">
+              <circle class="hole__halo" cx="330" cy="36" r="24"/>
+              <circle class="hole__ring" cx="330" cy="36" r="10"/>
+              <circle class="hole__in" cx="330" cy="36" r="6"/>
+              <text class="hole__label" x="330" y="18" text-anchor="middle">mi</text>
+            </g>
+          </g>
+        </svg>
+        <div class="ney__ui">
+          <button class="btn btn--ghost btn--sm" id="neyPlay" type="button" data-cursor="link">Hear a breath</button>
+          <span class="ney__hint">Hover or tap the holes to play a note.</span>
+        </div>
+      </div>
+    </div>
+    <div class="about__text">
+      <h3 class="reveal">The ney</h3>
+      <p class="reveal">A reed flute, seven holes, no reed mouthpiece. The sound comes only from the breath and the angle of the lips: it takes months before a clean note comes out. I play the Egyptian ney, the one of taqasim and classical Arabic music — in concert and at events, weddings included — and I make my own instruments from Arundo donax cane I source from Egypt and Turkey.</p>
+      <p class="reveal">Deep down it&#39;s the same gesture as coding: a lot of patience, a lot of failed attempts, and one day something that rings true. The waves you see in the header of this site are that — a breath becoming a signal.</p>
+      <h3 class="reveal">Also</h3>
+      <ul class="about__more">
+<li class="reveal">Competitive football and running.</li><li class="reveal">Video editing and communication for a non-profit: social media, clips, posters.</li><li class="reveal">Volunteering: humanitarian trips, street outreach, activities in a nursing home.</li><li class="reveal">Bilingual French and Egyptian Arabic, English C1, Italian A2. Three countries — Switzerland, France, Egypt — and three ways of saying things.</li>      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact__glow" aria-hidden="true"></div>
+  <p class="section__eyebrow reveal">Contact</p>
+  <h2 class="reveal-words">Let&#39;s work together.</h2>
+  <p class="contact__p reveal">I&#39;m looking for a team where I can grow fast on projects with impact — health, energy, everyday tools. If you have a problem that deserves a model and someone to put it into production, write to me.</p>
+  <a class="contact__mail magnetic reveal" href="mailto:maksimous.t@gmail.com" data-cursor="link" data-copy="maksimous.t@gmail.com"><span class="contact__mail-text">maksimous.t@gmail.com</span><span class="contact__mail-hint">Email me ↗</span></a>
+  <ul class="contact__list reveal">
+    <li><a href="https://www.linkedin.com/in/thomas-maksimous" target="_blank" rel="me noopener" data-cursor="link">LinkedIn</a></li>
+    <li><a href="https://github.com/tmsmks" target="_blank" rel="me noopener" data-cursor="link">GitHub</a></li>
+    <li><a href="../assets/CV_Thomas_Maksimous.pdf" target="_blank" data-cursor="link">Download my CV</a></li>
+    <li><a href="tel:+41798215626" data-cursor="link">+41 79 821 56 26</a></li>
+  </ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/sig/all.js" defer></script>
+<script src="../assets/js/home.js" defer></script>
+</body>
+</html>

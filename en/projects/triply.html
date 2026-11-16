@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page="project">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triply — Thomas Maksimous</title>
+<meta name="description" content="Flutter mobile app to organise a trip as a group: itinerary, budget, checklist, documents and photo album shared in real time.">
+<meta name="author" content="Thomas Maksimous">
+<meta name="theme-color" content="#07262B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Triply — Thomas Maksimous">
+<meta property="og:description" content="Flutter mobile app to organise a trip as a group: itinerary, budget, checklist, documents and photo album shared in real time.">
+<meta property="og:image" content="../../assets/img/thomas.jpg">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="fr" href="../../projets/triply.html">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --bg:#07262B;--bg2:#0D353B;--ink:#F4EAD2;--muted:#9DB7B5;
+  --accent:#F26B5B;--accent2:#5CC8C2;--line:rgba(244,234,210,.14);
+  --display:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;
+}
+</style>
+</head>
+<body class="project mood-sand">
+<a class="skip" href="#main">Skip to content</a>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label"></span></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header class="pnav">
+  <a class="pnav__back magnetic" href="../../en/index.html" data-cursor="link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></svg><span>Thomas Maksimous</span></a>
+  <span class="pnav__count"><b>05</b> / 08</span>
+  <div class="pnav__tools">
+    <a class="pnav__all" href="../../en/index.html#projets" data-cursor="link">All projects</a>
+    <a class="nav__lang" href="../../projets/triply.html" title="Lire en français">FR</a>
+  </div>
+</header>
+<main id="main">
+<header class="phero">
+  <div class="phero__sig" id="sig" data-sig="map" aria-hidden="true"></div>
+  <div class="phero__fade" aria-hidden="true"></div>
+  <div class="phero__inner">
+    <p class="phero__meta"><span>Autumn 2025</span><span>Advanced Mobile Application course, HES-SO.</span></p>
+    <h1 class="phero__title" id="pTitle">Triply</h1>
+    <p class="phero__sub">Dream it. Plan it. Live it.</p>
+    <p class="phero__tags"><i>Flutter</i><i>Firebase</i><i>Google Maps</i></p>
+  </div>
+  <a class="hero__scroll phero__scroll" href="#intro" aria-label="Scroll"><span>Scroll</span><i></i></a>
+</header>
+
+<section class="pintro" id="intro">
+  <div class="pintro__text">
+<p class="pintro__p reveal pintro__p--lead">A group trip is a WhatsApp group overflowing, three spreadsheets and a scanned passport lost among the photos. Triply puts everything in one place, for everyone, at the same time.</p>  </div>
+  <aside class="pside reveal">
+    <h2>My role</h2>
+    <p>Flutter architecture, Firestore data models, map and geolocation, real-time sync.</p>
+    <h2>Stack</h2>
+    <ul class="pside__stack"><li style="--ci:0">Flutter 3.9</li><li style="--ci:1">Dart</li><li style="--ci:2">Firebase Auth · Firestore · Storage</li><li style="--ci:3">Google Maps · Places API</li><li style="--ci:4">Riverpod</li><li style="--ci:5">GoRouter</li><li style="--ci:6">Freezed</li></ul>
+    <h2>Links</h2>
+    <ul class="pside__links">
+      <li><a href="https://github.com/tmsmks/triply" target="_blank" rel="noopener" data-cursor="link">github.com/tmsmks/triply ↗</a><span class="pside__private">Private repository — code on request</span></li>
+    </ul>
+  </aside>
+</section>
+
+
+<section class="psections">
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">01</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Plan together</h2>
+      <p>Create a trip with dates, budget and destination (Google Places autocomplete with coordinates), invite companions by email, day-by-day planning with geolocated places, a Google Map of all your trips.</p>
+<ul><li>Riverpod for reactive state</li><li>GoRouter and declarative navigation</li><li>Immutable models generated with Freezed</li></ul>    </div>
+  </article>
+  <article class="psec reveal">
+    <span class="psec__n" aria-hidden="true">02</span>
+    <div class="psec__body">
+      <h2 class="reveal-words">Share the rest</h2>
+      <p>Multi-currency budget with automatically updated balance, checklist split between participants, documents (tickets, bookings) stored in Firebase Storage, collaborative photo album. Full interface in French and English, switched on the fly.</p>
+<ul><li>Firestore with per-trip security rules</li><li>Real-time sync between participants</li><li>iOS, Android, web and macOS</li></ul>    </div>
+  </article>
+</section>
+
+<section class="presults">
+  <h2 class="reveal-words">What came out of it</h2>
+  <ul class="presults__grid">
+<li class="reveal"><strong data-count="4">4</strong><span>platforms from a single codebase</span></li><li class="reveal"><strong data-count="2">2</strong><span>languages, switched without restarting</span></li><li class="reveal"><strong data-count="6">6</strong><span>modules: plan, budget, checklist, documents, photos, map</span></li>  </ul>
+</section>
+
+<nav class="pfoot" aria-label="All projects">
+  <a class="pfoot__prev" href="dsm-gestion.html" data-cursor="link" style="--nbg:#0B1F4D;--nac:#F28C28;--nfont:&#39;Barlow Condensed&#39;, sans-serif"><small>← Previous project</small><span>DSM Gestion</span></a>
+  <a class="pfoot__next" href="objectif-prime.html" data-cursor="link" style="--nbg:#0B1F17;--nac:#3DDC84;--nfont:&#39;Outfit&#39;, sans-serif"><small>Next project →</small><span>Objectif Prime</span></a>
+</nav>
+</main>
+<footer class="foot">
+  <div class="foot__inner">
+    <p class="foot__made">Designed and coded by Thomas, built with a little AI and a lot of animation.</p>
+    <p class="foot__meta">© 2026 Thomas Maksimous · All rights reserved.</p>
+    <p class="foot__links"><a href="mailto:maksimous.t@gmail.com">maksimous.t@gmail.com</a> · <a href="https://www.linkedin.com/in/thomas-maksimous" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/tmsmks" rel="me noopener" target="_blank">GitHub</a> · <a href="../../assets/CV_Thomas_Maksimous.pdf" target="_blank">CV</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="../../assets/js/app.js" defer></script>
+<script src="../../assets/js/sig/all.js" defer></script>
+<script src="../../assets/js/project.js" defer></script>
+</body>
+</html>
