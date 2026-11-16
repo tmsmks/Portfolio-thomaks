@@ -36,28 +36,8 @@
     const hasGsap = !!window.gsap;
     if (hasGsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
 
-    /* ---------- Défilement doux (Lenis) ---------- */
-    if (!reduced && window.Lenis && fine) {
-      const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1, smoothWheel: true });
-      APP.lenis = lenis;
-      if (hasGsap) {
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((t) => lenis.raf(t * 1000));
-        gsap.ticker.lagSmoothing(0);
-      } else {
-        const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
-      }
-      // ancres
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener('click', (e) => {
-          const id = a.getAttribute('href'); if (id.length < 2) return;
-          const target = document.querySelector(id); if (!target) return;
-          e.preventDefault(); lenis.scrollTo(target, { offset: -60, duration: 1.4 });
-          history.replaceState(null, '', id);
-        });
-      });
-    }
-    APP.scrollTo = (target) => { if (APP.lenis) APP.lenis.scrollTo(target, { offset: -60 }); else target.scrollIntoView({ behavior: 'smooth' }); };
+    /* Défilement natif (le plus fluide sur trackpad et mobile). */
+    APP.scrollTo = (target) => target.scrollIntoView({ behavior: 'smooth' });
 
     /* ---------- Barre de progression ---------- */
     const bar = document.querySelector('.progress span');
@@ -73,7 +53,8 @@
       }
       lastY = y;
     }
-    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    let ticking = false;
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); } }, { passive: true }); onScroll();
 
     /* ---------- Menu mobile ---------- */
     const burger = document.querySelector('.nav__burger'), mnav = document.getElementById('mnav');

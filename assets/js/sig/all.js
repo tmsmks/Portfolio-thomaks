@@ -11,7 +11,7 @@
     const ctx = canvas.getContext('2d');
     const S = { W: 0, H: 0, t: 0, dpr: 1, running: false, raf: 0, last: 0 };
     function resize() {
-      S.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      S.dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       const r = canvas.getBoundingClientRect();
       S.W = Math.max(1, r.width); S.H = Math.max(1, r.height);
       canvas.width = S.W * S.dpr; canvas.height = S.H * S.dpr;
@@ -215,7 +215,7 @@
       ctx.beginPath(); ctx.moveTo(wx + ww + 16, wy); ctx.lineTo(wx + ww + 16 + (dx - wx - ww - 32) * ap, wy); ctx.stroke(); ctx.setLineDash([]);
       // document
       ctx.save(); ctx.translate(dx, dy);
-      ctx.fillStyle = alpha(T.accent2, 0.96); ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 30; ctx.shadowOffsetY = 12; ctx.fillRect(0, 0, dw, dh); ctx.shadowColor = 'transparent';
+      ctx.fillStyle = 'rgba(0,0,0,.22)'; ctx.fillRect(6, 14, dw, dh); ctx.fillStyle = alpha(T.accent2, 0.96); ctx.fillRect(0, 0, dw, dh);
       ctx.fillStyle = T.accent; ctx.fillRect(dw * 0.08, dh * 0.07, dw * 0.3, dh * 0.03);
       ctx.fillStyle = alpha(T.bg, 0.35); ctx.fillRect(dw * 0.6, dh * 0.07, dw * 0.32, dh * 0.018); ctx.fillRect(dw * 0.6, dh * 0.1, dw * 0.22, dh * 0.018);
       const lines = 9;

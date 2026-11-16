@@ -22,7 +22,8 @@
         col: i % 3 === 0 ? [233, 162, 59] : i % 3 === 1 ? [94, 234, 212] : [242, 239, 232], a: i % 3 === 2 ? 0.07 : 0.16,
       }));
       const motes = Array.from({ length: 70 }, () => ({ x: Math.random(), y: Math.random(), s: 0.6 + Math.random() * 1.8, v: 0.01 + Math.random() * 0.03, d: Math.random() * 6 }));
-      function resize() { dpr = Math.min(window.devicePixelRatio || 1, 2); const r = breath.getBoundingClientRect(); W = r.width; H = r.height; breath.width = W * dpr; breath.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+      function resize() { dpr = Math.min(window.devicePixelRatio || 1, 1.5); const r = breath.getBoundingClientRect(); W = r.width; H = r.height; breath.width = W * dpr; breath.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ribbons.forEach((rb) => { const g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, `rgba(${rb.col},0)`); g.addColorStop(0.35, `rgba(${rb.col},${rb.a})`); g.addColorStop(0.7, `rgba(${rb.col},${rb.a * 0.8})`); g.addColorStop(1, `rgba(${rb.col},0)`); rb.g = g; }); }
       new ResizeObserver(resize).observe(breath); resize();
       window.addEventListener('mousemove', (e) => { const r = breath.getBoundingClientRect(); tx = e.clientX - r.left; ty = e.clientY - r.top; }, { passive: true });
       let last = 0;
@@ -40,15 +41,13 @@
         ribbons.forEach((rb, i) => {
           const baseY = H * rb.y;
           ctx.beginPath();
-          for (let x = -20; x <= W + 20; x += 6) {
+          for (let x = -20; x <= W + 20; x += 12) {
             const dx = x - mx, dy = baseY - my, dist = Math.sqrt(dx * dx + dy * dy);
             const push = Math.exp(-dist * dist / (2 * 160 * 160)) * 60 * (dy < 0 ? -1 : 1);
             const y = baseY + Math.sin(x * rb.k + t * rb.sp + rb.ph) * rb.amp + Math.sin(x * rb.k * 2.7 - t * rb.sp * 0.7 + rb.ph) * rb.amp * 0.35 + push + Math.sin(t * 0.3 + i) * 10;
             x === -20 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
           }
-          const g = ctx.createLinearGradient(0, 0, W, 0);
-          g.addColorStop(0, `rgba(${rb.col},0)`); g.addColorStop(0.35, `rgba(${rb.col},${rb.a})`); g.addColorStop(0.7, `rgba(${rb.col},${rb.a * 0.8})`); g.addColorStop(1, `rgba(${rb.col},0)`);
-          ctx.strokeStyle = g; ctx.lineWidth = 1.2 + (i % 3 === 0 ? 0.8 : 0); ctx.stroke();
+          ctx.strokeStyle = rb.g; ctx.lineWidth = 1.2 + (i % 3 === 0 ? 0.8 : 0); ctx.stroke();
         });
         requestAnimationFrame(frame);
       }
@@ -110,7 +109,9 @@
       let x = 0, vel = 0, lastY = window.scrollY;
       const half = () => mq.scrollWidth / 2;
       window.addEventListener('scroll', () => { const y = window.scrollY; vel += (y - lastY) * 0.08; lastY = y; }, { passive: true });
+      let mqOn = true; new IntersectionObserver((en) => { mqOn = en[0].isIntersecting; }).observe(mq);
       (function loop() {
+        if (!mqOn) { requestAnimationFrame(loop); return; }
         vel *= 0.92; x -= 0.6 + Math.min(6, Math.abs(vel)) * Math.sign(vel || 1) * (vel < 0 ? 1 : 1);
         const h = half(); if (x <= -h) x += h; if (x > 0) x -= h;
         mq.style.transform = `translate3d(${x}px,0,0)`; requestAnimationFrame(loop);
@@ -135,21 +136,30 @@
        Projets : cartes empilées qui se tassent quand la suivante arrive.
        ==================================================================== */
     const cards = [...document.querySelectorAll('.card')];
+    // Les canvas des cartes se mettent en pause pendant le geste de scroll et reprennent à l'arrêt.
+    let scrolling = false, scrollTimer = 0; const syncs = [];
+    window.addEventListener('scroll', () => {
+      if (!scrolling) { scrolling = true; syncs.forEach((f) => f()); }
+      clearTimeout(scrollTimer); scrollTimer = setTimeout(() => { scrolling = false; syncs.forEach((f) => f()); }, 140);
+    }, { passive: true });
     cards.forEach((card, i) => {
       const canvas = card.querySelector('.card__sig');
       const sig = card.dataset.sig;
       const T = { bg: card.style.getPropertyValue('--pbg').trim(), bg2: card.style.getPropertyValue('--pbg2').trim(), ink: card.style.getPropertyValue('--pink').trim(), muted: card.style.getPropertyValue('--pmuted').trim(), accent: card.style.getPropertyValue('--pac').trim(), accent2: card.style.getPropertyValue('--pac2').trim() };
-      let anim = null;
+      let anim = null, visible = false, covered = false;
+      const sync = () => { if (!anim) return; (visible && !covered && !scrolling) ? anim.start() : anim.stop(); };
+      syncs.push(sync);
       if (window.SIG && SIG[sig] && canvas) {
         anim = SIG[sig](canvas, T, { mini: false });
-        new IntersectionObserver((en) => { en[0].isIntersecting ? anim.start() : anim.stop(); }, { threshold: 0.05 }).observe(card);
+        new IntersectionObserver((en) => { visible = en[0].isIntersecting; sync(); }, { threshold: 0.05 }).observe(card);
       }
       if (hasGsap && window.ScrollTrigger && !reduced && i < cards.length - 1) {
-        const link = card.querySelector('.card__link');
-        gsap.fromTo(link, { scale: 1, filter: 'brightness(1)' }, {
-          scale: 0.92, filter: 'brightness(.55)', ease: 'none',
-          scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top top+=100', scrub: true },
-        });
+        const link = card.querySelector('.card__link'), dim = card.querySelector('.card__dim');
+        const tw = gsap.timeline({ scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top top+=100', scrub: true,
+          onUpdate: (st) => { const c = st.progress > 0.6; if (c !== covered) { covered = c; sync(); } } } });
+        tw.fromTo(link, { scale: 1 }, { scale: 0.92, ease: 'none' }, 0).fromTo(dim, { opacity: 0 }, { opacity: 0.5, ease: 'none' }, 0);
+        // une carte recouverte par les deux suivantes n'est plus peinte
+        if (cards[i + 2]) ScrollTrigger.create({ trigger: cards[i + 2], start: 'top top+=' + Math.round(window.innerHeight * 0.25), onToggle: (st) => card.classList.toggle('is-buried', st.isActive), end: () => '+=' + (document.getElementById('stack').offsetHeight + window.innerHeight * 2) });
       }
     });
 
@@ -239,7 +249,7 @@
       function emit(dur) { const n = Math.round(dur * 40); for (let i = 0; i < n; i++) parts.push({ x: 0.06, y: 0.5 + (Math.random() - .5) * 0.08, vx: 0.25 + Math.random() * 0.35, vy: (Math.random() - .5) * 0.06, life: 1, s: 1 + Math.random() * 2.5, delay: Math.random() * dur * 0.7 }); }
       if (nb) {
         const nctx = nb.getContext('2d'); let W = 0, H = 0, dpr = 1, last = 0;
-        const resize = () => { dpr = Math.min(window.devicePixelRatio || 1, 2); const r = nb.getBoundingClientRect(); W = r.width; H = r.height; nb.width = W * dpr; nb.height = H * dpr; nctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+        const resize = () => { dpr = Math.min(window.devicePixelRatio || 1, 1.5); const r = nb.getBoundingClientRect(); W = r.width; H = r.height; nb.width = W * dpr; nb.height = H * dpr; nctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
         new ResizeObserver(resize).observe(nb); resize();
         (function loop(now) {
           const dt = Math.min(0.05, (now - last) / 1000 || 0.016); last = now;
