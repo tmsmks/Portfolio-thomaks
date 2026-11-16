@@ -28,9 +28,9 @@ SITE = {
 HOME = {
     "hero": {
         "kicker": "Portfolio 2026",
-        "line1": "Je transforme",
-        "line2": "des données en outils",
-        "line3": "qu'on utilise vraiment.",
+        "line1": "Data scientist,",
+        "line2": "bâtisseur",
+        "line3": "dans l'âme.",
         "lead": "Étudiant en Master Data Science à la HES-SO Lausanne, je pars d'un besoin concret — un hôpital, une conférence, une entreprise du bâtiment — et je vais jusqu'à la mise en production.",
         "status": "Recherche un CDI AI Engineer / Data Scientist junior — disponible dès mars 2027",
         "cta_projects": "Découvrir mes projets",

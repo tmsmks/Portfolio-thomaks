@@ -28,9 +28,9 @@ SITE = {
 HOME = {
     "hero": {
         "kicker": "Portfolio 2026",
-        "line1": "I turn data",
-        "line2": "into tools",
-        "line3": "people actually use.",
+        "line1": "Data scientist,",
+        "line2": "builder",
+        "line3": "at heart.",
         "lead": "Master's student in Data Science at HES-SO Lausanne. I start from a concrete need — a hospital, a conference, a construction company — and go all the way to production.",
         "status": "Looking for a permanent junior AI Engineer / Data Scientist role — available from March 2027",
         "cta_projects": "See my projects",
